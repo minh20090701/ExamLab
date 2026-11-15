@@ -17,6 +17,9 @@ function examlabDeckKind(deck){
  const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  const makeId=prefix=>`${prefix}-${Date.now().toString(36)}-${Math.random().toString(36).slice(2,8)}`;
  const state={banks:[],selected:null,draft:null,selectedQ:-1,dirty:false,filter:'all',kindFilter:'all',search:'',db:null,visibility:new Map()};
+ // Refresh uploaded decks from the server while preserving local drafts.
+ let cloudDeckIds=new Set(),editorSource='local',cloudDraft=null,bankLoadTicket=0;
+ function editorLoading(value){const editor=$('#editorUI');editor.inert=value;editor.setAttribute('aria-busy',String(value))}
  let toastTimer;
  function toast(msg,error=false){const e=$('#adminToast');e.textContent=msg;e.className=error?'show error':'show';clearTimeout(toastTimer);toastTimer=setTimeout(()=>{e.className=''},4200)}
  function dbOpen(){return new Promise((res,rej)=>{const r=indexedDB.open('examlab-db',1);r.onupgradeneeded=()=>{for(const name of ['banks','attempts','drafts','meta'])if(!r.result.objectStoreNames.contains(name))r.result.createObjectStore(name,{keyPath:'id'})};r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error)})}
@@ -134,10 +137,11 @@ async function loadAdminIndex(){
  await adminMeta('put',{id:'examlab-admin-index-v19',banks:desc});
  return desc;
 }
-async function fetchAdminBank(entry){
+async function fetchAdminBank(entry,{source='auto'}={}){
  let payload=null;
- if(entry.needsPublish){
+ if(source==='local'||(source==='auto'&&entry.needsPublish)){
   payload=await dbAction('get',entry.id);
+  if(source==='local'&&!payload)throw Error('Không tìm thấy bản nháp trên máy của đề này.');
  }
  if(!payload){
   const db=window.ExamLabSupabase;
@@ -146,10 +150,11 @@ async function fetchAdminBank(entry){
    if(error)throw Error('Không tải được nội dung đề: '+error.message);
    if(data?.payload)payload=data.payload;
   }
+  if(source==='cloud'&&!payload)throw Error(db?'Đề không còn trên web. Hãy làm mới thư viện đề.':'Chưa kết nối được máy chủ để tải bản đề mới nhất.');
  }
  if(!payload)payload=await dbAction('get',entry.id);
  if(!payload)throw Error('Không tìm thấy nội dung đề trên máy hoặc Supabase.');
- return normalize(payload);
+ return normalize({...payload,id:String(entry.id)});
 }
 function adminProgress(value,total,description){
  const bar=$('#v19PublishBar'),label=$('#v19PublishLabel'),holder=$('#v19PublishProgress');
@@ -167,28 +172,35 @@ function adminProgress(value,total,description){
   const rows=banks.filter(b=>(state.filter==='all'||state.filter===b.subject)&&(state.kindFilter==='all'||examlabDeckKind(b)===state.kindFilter)&&(`${b.title} ${b.description}`.toLowerCase().includes(state.search))).sort((a,b)=>a.title.localeCompare(b.title,'vi'));v19AdminPage=Math.min(v19AdminPage,Math.max(0,Math.ceil(rows.length/v19AdminPageSize)-1));const pageRows=rows.slice(v19AdminPage*v19AdminPageSize,(v19AdminPage+1)*v19AdminPageSize);
   $('#bankList').innerHTML=rows.length?pageRows.map(b=>`<button type="button" class="admin-bank-row ${state.selected===b.id?'selected':''}" data-bank="${esc(b.id)}"><span class="bank-row-icon">${({toan:'∑',ly:'⚛',hoa:'⚗',sinh:'❀'})[b.subject]}</span><span class="bank-row-main"><b>${esc(b.title)}</b><small>${examlabDeckKind(b)==='mock'?'Đề thi mô phỏng':'Đề luyện tập'} · ${esc(SUBJECTS[b.subject])} · ${adminDeckCount(b)} câu · ${b.durationMinutes} phút · ${state.visibility.get(b.id)===false?'🔒 Đã ẩn':state.visibility.get(b.id)===true?'✓ Công khai':'◌ Chưa xuất bản'}</small></span><span class="bank-row-arrow">›</span></button>`).join(''):'<p class="admin-no-data">Chưa có bộ đề phù hợp. Bấm “Tạo đề” hoặc “Tải bộ đề lên” để bắt đầu.</p>';
   $('#publishNote').textContent=`Có ${banks.filter(b=>b.needsPublish).length} bộ đề cần cập nhật trong ${banks.length} bộ đề. Chỉ gửi đề mới hoặc đã sửa lên Supabase.`; const totalPages=Math.ceil(rows.length/v19AdminPageSize);const pager=$('#v19AdminPager');if(pager){pager.hidden=totalPages<=1;$('#v19AdminPageText').textContent='Trang '+(v19AdminPage+1)+'/'+Math.max(1,totalPages);$('#v19AdminPrev').disabled=v19AdminPage===0;$('#v19AdminNext').disabled=v19AdminPage>=totalPages-1;} } async function ensureLeave(){return !state.dirty||await window.ExamLabDialog.confirm('Bạn có thay đổi chưa lưu trong bộ đề. Nếu tiếp tục, những thay đổi đó sẽ bị bỏ qua.',{title:'Bỏ thay đổi chưa lưu?',confirmText:'Bỏ thay đổi',danger:true})}
- async function selectBank(id){
+ async function selectBank(id,{local=false}={}){
   if(!(await ensureLeave()))return;
   const entry=state.banks.find(b=>String(b.id)===String(id));if(!entry)return;
-  const previous=state.selected;
+  const ticket=++bankLoadTicket,previous=state.draft?.id||null;
+  const source=local?'local':cloudDeckIds.has(String(id))||!entry.needsPublish?'cloud':'local';
   state.selected=id;refresh();
-  syncMessage('Đang tải nội dung bộ đề “'+entry.title+'”…');
+  editorLoading(true);syncMessage(source==='cloud'?'Đang tải bản mới nhất của “'+entry.title+'” từ web…':'Đang mở bản nháp trên máy…');
   try{
-   const bank=await fetchAdminBank(entry);
-   if(state.selected!==id)return;
-   state.draft=structuredClone(bank);state.selectedQ=bank.questions.length?0:-1;state.dirty=false;
-   renderEditor();refresh();syncMessage('Đã tải bộ đề “'+entry.title+'”.');
-  }catch(e){state.selected=previous;refresh();toast(e.message,true);syncMessage(e.message)}
+   const bank=await fetchAdminBank(entry,{source});
+   if(ticket!==bankLoadTicket||state.selected!==id)return;
+   state.draft=structuredClone(bank);state.selectedQ=bank.questions.length?0:-1;state.dirty=false;editorSource=source;
+   cloudDraft=source==='cloud'?state.draft:null;
+   renderEditor();refresh();syncMessage(source==='cloud'?'Đã tải bản trên web mới nhất của “'+bank.title+'”.':'Đang xem bản nháp trên máy của “'+bank.title+'”.');
+  }catch(e){if(ticket!==bankLoadTicket)return;state.selected=previous;refresh();toast(e.message,true);syncMessage(e.message)}
+  finally{if(ticket===bankLoadTicket)editorLoading(false)}
  }
 
  function markDirty(){state.dirty=true;$('#editStatus').textContent='● Có thay đổi chưa lưu';$('#editStatus').classList.add('unsaved');$('#editorHeadline').textContent=state.draft.title||'Đề chưa đặt tên';}
  function renderEditor(){
   const b=state.draft;
+  // Bulk editing replaces the draft with its locally saved result.
+  if(b&&editorSource==='cloud'&&b!==cloudDraft)editorSource='local';
   $('#adminEmpty').hidden=!!b;$('#editorUI').hidden=!b;
+  const draftNotice=$('#adminLocalDraftNotice');
+  if(draftNotice)draftNotice.hidden=!b||editorSource!=='cloud'||!state.banks.find(row=>String(row.id)===String(b.id))?.needsPublish;
   if(!b)return;
   $('#bankTitle').value=b.title;$('#bankSubject').value=b.subject;$('#bankKind').value=examlabDeckKind(b);$('#bankDescription').value=b.description||'';$('#bankDuration').value=b.durationMinutes;
   const visible=state.visibility.get(b.id),toggle=$('#toggleBankVisibility');if(toggle){toggle.disabled=visible===undefined;toggle.textContent=visible===false?'👁 Hiện đề':visible===true?'🔒 Ẩn đề':'◌ Chưa xuất bản';toggle.title=visible===undefined?'Hãy xuất bản đề trước khi ẩn/hiện':'Đổi trạng thái công khai của đề trên Supabase';}
-  $('#editorHeadline').textContent=b.title||'Đề mới';$('#editStatus').textContent=state.dirty?'● Có thay đổi chưa lưu':'✓ Đã lưu trên thiết bị';$('#editStatus').classList.toggle('unsaved',state.dirty);
+  $('#editorHeadline').textContent=b.title||'Đề mới';$('#editStatus').textContent=state.dirty?'● Có thay đổi chưa lưu':editorSource==='cloud'?'✓ Bản đã tải lên web':'✓ Bản nháp trên thiết bị';$('#editStatus').classList.toggle('unsaved',state.dirty);
   renderGradingConfig();refreshQuestions();
  }
  function refreshQuestions(){
@@ -286,12 +298,12 @@ function changeQuestionType(type){
    await dbAction('save',b);
    const entry=adminDescriptor(b,true),i=state.banks.findIndex(v=>v.id===b.id);
    if(i<0)state.banks.push(entry);else state.banks[i]=entry;
-   await saveAdminIndex();state.draft=structuredClone(b);state.selected=b.id;state.dirty=false;
+   await saveAdminIndex();state.draft=structuredClone(b);state.selected=b.id;state.dirty=false;editorSource='local';
    renderEditor();refresh();toast('Đã lưu “'+b.title+'” · '+b.questions.length+' câu (chưa xuất bản)');
   }catch(e){toast(e.message,true)}
  }
 
- async function newBank(){if(!(await ensureLeave()))return;const b={format:FORMAT,id:makeId('de'),title:'',subject:'hoa',description:'',durationMinutes:60,kind:'practice',questions:[],grading:normalizeGrading(null)};state.draft=b;state.selected=b.id;state.selectedQ=-1;state.dirty=true;renderEditor();refresh();$('#bankTitle').focus()}
+ async function newBank(){if(!(await ensureLeave()))return;++bankLoadTicket;editorLoading(false);editorSource='local';const b={format:FORMAT,id:makeId('de'),title:'',subject:'hoa',description:'',durationMinutes:60,kind:'practice',questions:[],grading:normalizeGrading(null)};state.draft=b;state.selected=b.id;state.selectedQ=-1;state.dirty=true;renderEditor();refresh();$('#bankTitle').focus()}
  let deletingBank=false;
  async function deleteBank(){
   if(deletingBank||!state.draft)return;
@@ -314,6 +326,7 @@ Nếu đã xuất bản, đề sẽ bị xóa trên Supabase và không hiện l
    try{await dbAction('remove',bankId)}catch(e){localError=e}
    state.banks=state.banks.filter(x=>String(x.id)!==bankId);
    state.visibility.delete(bankId);
+   cloudDeckIds.delete(bankId);
    await saveAdminIndex();
    state.draft=null;state.selected=null;state.selectedQ=-1;state.dirty=false;
    renderEditor();refresh();
@@ -356,8 +369,11 @@ Nếu đã xuất bản, đề sẽ bị xóa trên Supabase và không hiện l
 
  let publishingV19=false;
  async function publish(){
-  if(publishingV19)return;
+  if(publishingV19||syncingCloud)return;
   if(state.dirty){toast('Hãy lưu đề đang chỉnh sửa trước khi xuất bản.',true);return}
+  if(editorSource==='cloud'&&state.banks.some(b=>b.id===state.selected&&b.needsPublish)){
+   toast('Đề đang xem còn bản nháp trên máy. Hãy mở bản nháp để kiểm tra trước khi xuất bản.',true);return;
+  }
   const db=window.ExamLabSupabase;
   if(!db){toast('Chưa kết nối Supabase.',true);return}
   publishingV19=true;const btn=$('#publishBtn');if(btn)btn.disabled=true;
@@ -386,7 +402,8 @@ Nếu đã xuất bản, đề sẽ bị xóa trên Supabase và không hiện l
       const {data,error:restError}=await db.rpc('examlab_admin_restore_deleted_deck',{p_deck_id:String(entry.id)});
       if(restError||data!==true)throw Error('Đã tải lại “'+bank.title+'” nhưng chưa bỏ được dấu xóa: '+(restError?.message||'Không xác nhận được'));
     }
-    entry.needsPublish=false;entry.questionCount=bank.questions.length;
+    entry.needsPublish=false;entry.questionCount=bank.questions.length;cloudDeckIds.add(String(bank.id));
+    if(String(state.draft?.id)===String(bank.id)&&!state.dirty){editorSource='cloud';cloudDraft=state.draft}
     state.visibility.set(bank.id,true);
     okCount++;done++;await saveAdminIndex();
     adminProgress(done,changed.length,'Đang xuất bản lên Supabase');
@@ -507,7 +524,7 @@ Nếu đã xuất bản, đề sẽ bị xóa trên Supabase và không hiện l
     }
     await saveAdminIndex();importState.busy=false;root.hidden=true;refresh();
     toast(errors.length?`Đã lưu ${count} đề, ${errors.length} lỗi: ${errors[0]}`:`Đã lưu ${count} đề vào bản nháp Admin. Chưa xuất bản.`,!!errors.length);
-    if(count&&!state.dirty){const bank=selected.find(x=>state.banks.some(b=>b.id===x.bank.id))?.bank;if(bank)selectBank(bank.id)}
+    if(count&&!state.dirty){const bank=selected.find(x=>state.banks.some(b=>b.id===x.bank.id))?.bank;if(bank)selectBank(bank.id,{local:true})}
   };
  }
  async function importFiles(files){
@@ -542,18 +559,20 @@ Nếu đã xuất bản, đề sẽ bị xóa trên Supabase và không hiện l
  let syncingCloud=false;
  function syncMessage(message){const el=$('#cloudSyncStatus');if(el)el.textContent=message}
  async function syncPublishedFromSupabase(){
-  if(syncingCloud)return;
+  if(syncingCloud||publishingV19)return;
   if(!state.db){syncMessage('Chưa mở được bộ nhớ cục bộ');return}
   syncingCloud=true;const reload=$('#reloadPublished');if(reload)reload.disabled=true;
-  syncMessage('Đang tải danh mục đề gọn nhẹ từ Supabase…');
+  syncMessage('Đang tải lại danh sách đề đã up…');
   try{
    const db=window.ExamLabSupabase;if(!db)throw Error('Chưa kết nối được Supabase');
-   const {data,error}=await db.rpc('examlab_admin_deck_catalog');
+   const [catalog,visibility,removedIds]=await Promise.all([db.rpc('examlab_admin_deck_catalog'),readVisibilityStatuses(db),readRemovedIds(db)]);
+   const {data,error}=catalog;
    if(error)throw Error('Cần chạy docs/SETUP_LAZY_LOAD_V19.sql: '+error.message);
-   state.visibility=await readVisibilityStatuses(db);
-   const removedIds=await readRemovedIds(db);
+   state.visibility=visibility;
    const previous=new Map(state.banks.map(b=>[String(b.id),b]));
-   for(const id of removedIds){if(!previous.get(id)?.needsPublish)previous.delete(id)}
+   // The server owns the uploaded list. Only actual pending local drafts survive
+   // when an entry disappears from the catalogue; clean cache entries cannot return.
+   const next=new Map(state.banks.filter(b=>b.needsPublish).map(b=>[String(b.id),b]));
    const fromServer=new Set();
    for(const row of data||[]){
     const id=String(row.deck_id);if(removedIds.has(id))continue;
@@ -561,13 +580,17 @@ Nếu đã xuất bản, đề sẽ bị xóa trên Supabase và không hiện l
     const old=previous.get(id);
     const meta=adminDescriptor({id,title:row.title,subject:row.subject,description:row.description,durationMinutes:row.duration_minutes,
      questionCount:row.question_count,kind:row.kind,updatedAt:row.updated_at},old?.needsPublish===true);
-    previous.set(id,meta);
+    next.set(id,meta);
    }
-   state.banks=[...previous.values()];
-   if(state.draft&&removedIds.has(String(state.draft.id))){state.draft=null;state.selected=null;state.selectedQ=-1;state.dirty=false}
-   await saveAdminIndex();refresh();renderEditor();
-   syncMessage('Đã tải '+(data?.length||0)+' bộ đề dạng danh mục; nội dung câu hỏi chỉ tải khi chọn. Có '+state.banks.filter(b=>b.needsPublish).length+' đề chờ xuất bản.');
-  }catch(e){console.error(e);syncMessage('Không tải được danh mục: '+e.message);toast(e.message,true)}
+   cloudDeckIds=fromServer;state.banks=[...next.values()];
+   if(state.selected&&!state.dirty&&(!next.has(String(state.selected))||(editorSource==='cloud'&&!fromServer.has(String(state.selected))))){++bankLoadTicket;editorLoading(false);state.draft=null;state.selected=null;state.selectedQ=-1}
+   await saveAdminIndex();refresh();
+   // Never replace text that the admin is currently typing while a request is in flight.
+   if(state.dirty){syncMessage('Đã cập nhật danh sách đề đã up. Phần bạn đang sửa được giữ nguyên; hãy lưu trước khi tải lại nội dung.');return}
+   if(state.selected&&fromServer.has(String(state.selected))){await selectBank(state.selected);return}
+   renderEditor();
+   syncMessage('Đã tải lại '+fromServer.size+' bộ đề đã up. Khi mở đề sẽ lấy nội dung mới nhất từ web.');
+  }catch(e){console.error(e);refresh();syncMessage('Chưa tải được bản mới nhất: '+e.message+'. Dữ liệu đang có trên máy vẫn được giữ.');toast(e.message,true)}
   finally{syncingCloud=false;if(reload)reload.disabled=false}
  }
 
@@ -577,8 +600,7 @@ Nếu đã xuất bản, đề sẽ bị xóa trên Supabase và không hiện l
    if(!access.allowed)throw Error(access.message);
    state.db=await dbOpen();
    state.banks=await loadAdminIndex();
-   refresh();renderEditor(); // Không đợi mạng trước khi hiện danh sách đề của máy.
-   syncMessage(`Có ${state.banks.length} bộ đề trên máy. Đang cập nhật dữ liệu…`);
+   $('#bankList').innerHTML='<p class="admin-no-data">Đang tải lại các bộ đề đã up…</p>';renderEditor();
    await syncPublishedFromSupabase();
   }catch(e){
    toast('Không vào được Admin: '+e.message,true);
@@ -594,6 +616,9 @@ Nếu đã xuất bản, đề sẽ bị xóa trên Supabase và không hiện l
  $('#publishBtn').addEventListener('click',publish);
  $('#toggleBankVisibility')?.addEventListener('click',toggleBankVisibility);
  $('#reloadPublished')?.addEventListener('click',syncPublishedFromSupabase);
+ $('#openLocalDraft')?.addEventListener('click',()=>{if(state.selected)selectBank(state.selected,{local:true})});
+ // Back/Forward may restore this document without running boot again.
+ window.addEventListener('pageshow',event=>{if(event.persisted&&state.db)syncPublishedFromSupabase()});
  $('#addQuestion').addEventListener('click',()=>{if(!state.draft)return;state.draft.questions.push({id:makeId('cau'),type:'short',text:'',answer:'',explanation:'',aliases:[],images:[],contentHtml:''});state.selectedQ=state.draft.questions.length-1;markDirty();refreshQuestions();$('#qText')?.focus()});
  $('#importTrigger').addEventListener('click',()=>$('#adminFileInput').click());
  $('#adminFileInput').addEventListener('change',async e=>{await importFiles(e.target.files);e.target.value=''});

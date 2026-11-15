@@ -1,0 +1,79 @@
+{
+  "desktop": [
+    {
+      "page": "index.html",
+      "issues": []
+    },
+    {
+      "page": "profile.html",
+      "issues": []
+    },
+    {
+      "page": "study.html",
+      "issues": []
+    },
+    {
+      "page": "documents.html",
+      "issues": []
+    },
+    {
+      "page": "admin.html",
+      "issues": []
+    },
+    {
+      "page": "admin-docs.html",
+      "issues": []
+    },
+    {
+      "page": "login.html",
+      "issues": []
+    },
+    {
+      "page": "reset.html",
+      "issues": []
+    },
+    {
+      "page": "friends-beta/index.html",
+      "issues": []
+    }
+  ],
+  "mobile": [
+    {
+      "page": "index.html",
+      "issues": []
+    },
+    {
+      "page": "profile.html",
+      "issues": []
+    },
+    {
+      "page": "study.html",
+      "issues": []
+    },
+    {
+      "page": "documents.html",
+      "issues": []
+    },
+    {
+      "page": "admin.html",
+      "issues": []
+    },
+    {
+      "page": "admin-docs.html",
+      "issues": []
+    },
+    {
+      "page": "login.html",
+      "issues": []
+    },
+    {
+      "page": "reset.html",
+      "issues": []
+    },
+    {
+      "page": "friends-beta/index.html",
+      "issues": []
+    }
+  ],
+  "scope": "Static HTML with local CSS embedded in Chromium; scripts and network disabled. Header controls and announcement label; 20 themes x 2 modes per page; opaque backgrounds only."
+}

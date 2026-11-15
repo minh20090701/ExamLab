@@ -1,0 +1,33 @@
+/* V50: global announcement decoration. Keep scrolling text, accessible contrast and compact mobile. */
+html[data-festival][data-v49-theme][data-theme] .site-announcement{position:relative;isolation:isolate;display:flex;align-items:center;gap:12px;padding:8px clamp(10px,2.2vw,26px);min-height:46px;box-sizing:border-box;background:linear-gradient(95deg,var(--season-soft2),var(--season-paper) 30%,var(--season-paper) 76%,var(--season-soft2))!important;color:var(--season-ink)!important;border-top:1px solid var(--season-line)!important;border-bottom:1px solid var(--season-line)!important;box-shadow:inset 0 -2px 0 color-mix(in srgb,var(--season-accent) 20%,transparent)}
+html[data-festival][data-v49-theme][data-theme] .announcement-label{display:flex;align-items:center;gap:7px;flex:none;padding:5px 10px;border-radius:8px;background:var(--season-accent)!important;color:var(--season-on)!important;border:1px solid var(--season-accent)!important;font-size:12px;font-weight:800;box-shadow:0 2px 6px #00000012;white-space:nowrap}
+html[data-festival][data-v49-theme][data-theme] .announcement-label::before{content:var(--v50-notice-icon,'✦');font-size:16px;line-height:1}
+html[data-festival][data-v49-theme][data-theme] .site-announcement::after{content:var(--v50-notice-motif,'✦ · ✦');flex:none;display:flex;align-items:center;justify-content:center;align-self:stretch;min-width:75px;padding:0 10px;font-size:16px;font-weight:700;letter-spacing:3px;color:var(--season-ink);background-image:linear-gradient(90deg,var(--season-paper),transparent 30%),var(--v47-landscape);background-position:right center;background-size:cover;border-left:1px solid var(--season-line);border-radius:0 6px 6px 0;pointer-events:none}
+html[data-festival][data-v49-theme][data-theme] .announcement-window{min-width:0;flex:1;overflow:hidden;position:relative;z-index:1;color:var(--season-ink)!important}
+html[data-festival][data-v49-theme][data-theme] #announcementText{color:var(--season-ink)!important;font-weight:600;line-height:1.65}
+html[data-festival][data-v49-theme][data-theme] .site-announcement:hover #announcementText,html[data-festival][data-v49-theme][data-theme] .site-announcement:focus-within #announcementText{animation-play-state:paused}
+#festivalChoices .festival-thumb{padding:0;overflow:hidden;background:var(--soft);height:100px}#festivalChoices .festival-thumb img{width:100%;height:100%;object-fit:cover;display:block}#festivalChoices .festival-choice input{z-index:1}#globalThemeAdminV50{padding:20px;margin:20px auto;max-width:1180px;border:1px solid var(--line);border-radius:16px;background:var(--paper)}#globalThemeAdminV50[hidden]{display:none!important}
+.v50-particles{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:2;contain:strict}.v50-particles[hidden]{display:none!important}.v50-particles span{position:absolute;left:var(--x);top:-30px;color:var(--season-accent);font-size:14px;opacity:.28;animation:v50-fall var(--dur) linear var(--delay) infinite}@keyframes v50-fall{from{transform:translateY(-20px)}to{transform:translate(20px,105vh) rotate(45deg)}}
+@media(max-width:600px){html[data-festival][data-v49-theme][data-theme] .site-announcement{gap:7px;padding:6px 8px;min-height:40px}html[data-festival][data-v49-theme][data-theme] .announcement-label{font-size:10px;padding:5px 7px;gap:4px}html[data-festival][data-v49-theme][data-theme] .announcement-label::before{font-size:13px}html[data-festival][data-v49-theme][data-theme] .site-announcement::after{min-width:24px;padding:0 4px;font-size:11px;letter-spacing:0;background-image:none;content:var(--v50-notice-icon)}html[data-festival][data-v49-theme][data-theme] #announcementText{font-size:12px}#festivalChoices .festival-thumb{height:80px}}
+@media(prefers-reduced-motion:reduce){.v50-particles{display:none!important}html[data-festival][data-v49-theme][data-theme] #announcementText{animation:none!important;padding-left:0!important;white-space:normal;width:auto;min-width:0}}
+html[data-festival="classic"]{--v50-notice-icon:"文";--v50-notice-motif:"文 · ❖"}
+html[data-festival="christmas"]{--v50-notice-icon:"❄";--v50-notice-motif:"❄ · ✧"}
+html[data-festival="tet"]{--v50-notice-icon:"🏮";--v50-notice-motif:"✿ · 🏮"}
+html[data-festival="midautumn"]{--v50-notice-icon:"☾";--v50-notice-motif:"☾ · ✧"}
+html[data-festival="halloween"]{--v50-notice-icon:"🎃";--v50-notice-motif:"🎃 · ✦"}
+html[data-festival="night"]{--v50-notice-icon:"✦";--v50-notice-motif:"✦ · ☾"}
+html[data-festival="sakura"]{--v50-notice-icon:"✿";--v50-notice-motif:"✿ · ✿"}
+html[data-festival="rain"]{--v50-notice-icon:"☔";--v50-notice-motif:"☔ · ⋮"}
+html[data-festival="forest"]{--v50-notice-icon:"❧";--v50-notice-motif:"❧ · ❧"}
+html[data-festival="autumn"]{--v50-notice-icon:"🍁";--v50-notice-motif:"🍁 · ❧"}
+html[data-festival="ocean"]{--v50-notice-icon:"≈";--v50-notice-motif:"≈ · ○"}
+html[data-festival="sunset"]{--v50-notice-icon:"☀";--v50-notice-motif:"☀ · ◇"}
+html[data-festival="cyber"]{--v50-notice-icon:"⌁";--v50-notice-motif:"⌁ · ✦"}
+html[data-festival="cultivation"]{--v50-notice-icon:"☁";--v50-notice-motif:"☁ · ◇"}
+html[data-festival="magic"]{--v50-notice-icon:"✧";--v50-notice-motif:"✧ · ✦"}
+html[data-festival="cute"]{--v50-notice-icon:"♡";--v50-notice-motif:"♡ · ✿"}
+html[data-festival="winter"]{--v50-notice-icon:"❄";--v50-notice-motif:"❄ · ❄"}
+html[data-festival="desert"]{--v50-notice-icon:"◇";--v50-notice-motif:"◇ · ☀"}
+html[data-festival="blackgold"]{--v50-notice-icon:"◆";--v50-notice-motif:"◆ · ✦"}
+html[data-festival="space"]{--v50-notice-icon:"✦";--v50-notice-motif:"✦ · ◉"}
+html[data-festival][data-v49-theme][data-theme=light]{--notice-surface:var(--season-soft);--notice-ink:var(--season-ink);--notice-line:var(--season-accent);--notice-good:#24543b;--notice-good-bg:#e6f4eb;--notice-bad:#8e3042;--notice-bad-bg:#fbe9ed;--notice-warn:#784b13;--notice-warn-bg:#fff0d8}html[data-festival][data-v49-theme][data-theme=dark]{--notice-surface:var(--season-soft);--notice-ink:var(--season-ink);--notice-line:var(--season-accent);--notice-good:#b8e4c7;--notice-good-bg:#233c30;--notice-bad:#ffbec8;--notice-bad-bg:#452b36;--notice-warn:#ffda9a;--notice-warn-bg:#453724}

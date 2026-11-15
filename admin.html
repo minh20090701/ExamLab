@@ -31,7 +31,9 @@
 <link rel="stylesheet" href="css/theme-decor-v491.css?v=49.1">
 <link rel="stylesheet" href="css/header-account-v35.css?v=35">
 <link rel="stylesheet" href="css/theme-readable-v36.css?v=36">
-<link rel="stylesheet" href="css/theme-store-v491.css?v=49.1">
+<link rel="stylesheet" href="css/theme-store-v491.css?v=50.1">
+<link rel="stylesheet" href="css/announcements-v50.css?v=50.1">
+<link rel="stylesheet" href="css/readability-v501.css?v=50.1">
 </head>
 <body class="admin-page">
 <header class="topbar" id="topbar">
@@ -48,6 +50,7 @@
 </div>
 </header>
 <aside class="site-announcement" aria-label="Thông báo"><span class="announcement-label">Thông báo</span><div class="announcement-window"><p id="announcementText">Chào mừng bạn đến với ExamLab · Chúc bạn học tập hiệu quả!</p></div></aside>
+<section id="globalThemeAdminV50" hidden aria-label="Quản trị giao diện chung"></section>
 <section aria-live="polite" class="admin-permission-status" id="adminPermissionScreen" role="status"><h2>Đang xác minh quyền quản trị</h2><p>Đang kiểm tra tài khoản…</p></section>
 <main class="admin-wrap" data-admin-guard="" hidden="">
 <div class="admin-hero"><div><span class="eyebrow">❖ EXAMLAB · PHÒNG BIÊN SOẠN</span><h1>Quản đề khoa bảng</h1><p>Gom tri thức thành đề thi. Biên soạn, kiểm tra đáp án rồi phát hành vào tủ sách.</p><div class="admin-hero-badges"><span>✦ Toán</span><span>✦ Vật lý</span><span>✦ Hóa học</span><span>✦ Sinh học</span></div></div><div aria-hidden="true" class="admin-hero-mark"><div>QUẢN<br/>ĐỀ</div><small>VĂN HIẾN · KHOA BẢNG</small></div></div>
@@ -58,11 +61,14 @@
 <div class="admin-toolbar"><label class="sr-only" for="bankSearch">Tìm đề</label><input id="bankSearch" placeholder="⌕ Tìm tên đề..." type="search"/><label class="sr-only" for="subjectFilter">Lọc môn học</label><select id="subjectFilter"><option value="all">Tất cả môn</option><option value="toan">Toán</option><option value="ly">Vật lý</option><option value="hoa">Hóa học</option><option value="sinh">Sinh học</option></select><label class="sr-only" for="kindFilter">Lọc loại đề</label><select id="kindFilter"><option value="all">Mọi loại đề</option><option value="practice">Đề luyện tập</option><option value="mock">Đề thi mô phỏng</option></select></div>
 <div aria-live="polite" class="admin-bank-list" id="bankList"></div><div id="v19AdminPager" class="v19-admin-pager" hidden><button type="button" id="v19AdminPrev" class="btn btn-ghost btn-sm">← Trước</button><span id="v19AdminPageText">Trang 1</span><button type="button" id="v19AdminNext" class="btn btn-ghost btn-sm">Sau →</button></div>
 <div class="admin-library-footer"><button class="btn btn-ghost btn-wide" id="reloadPublished" type="button">↻ Làm mới thư viện đề</button><button class="btn btn-primary btn-wide" id="importTrigger" type="button">⇧ Tải bộ đề lên</button><button class="btn btn-ghost btn-wide" id="templateTrigger">⇩ Tải định dạng mẫu</button></div>
-<p class="admin-import-hint" id="cloudSyncStatus" role="status">Đang kiểm tra thư viện đề…</p><p class="admin-import-hint">Chọn tệp hoặc gói đề từ thiết bị. Xem trước và chọn đề cần lưu trước khi phát hành.</p>
+<p class="admin-import-hint" id="cloudSyncStatus" role="status">Đang kiểm tra thư viện đề…</p><p class="admin-import-hint">Mỗi lần vào trang sẽ tải lại danh sách đề đã up; khi chọn đề sẽ lấy nội dung mới nhất. Bản nháp chưa xuất bản vẫn được giữ trên máy.</p>
 </div>
 <div class="admin-panel admin-editor-shell" id="editorShell"><div class="admin-empty" id="adminEmpty"><span class="admin-empty-icon">✒</span><h2>Chọn một bộ đề để biên soạn</h2><p>Chọn đề hoặc tạo mới, phân loại luyện tập/mô phỏng rồi biên soạn trắc nghiệm, Đúng/Sai và trả lời ngắn.</p></div>
 <div hidden="" id="editorUI"><div class="admin-panel-head admin-edit-heading"><div><span class="eyebrow">BIÊN SOẠN ĐỀ THI</span><h2 id="editorHeadline">Bộ đề</h2><p id="editStatus">Những thay đổi chưa được lưu</p></div><div class="editor-head-actions"><button class="btn btn-ghost btn-sm" id="previewBank">◉ Xem thử</button><button class="btn btn-ghost btn-sm" disabled="" id="toggleBankVisibility" type="button">◌ Chưa xuất bản</button><button class="btn btn-primary btn-sm" id="saveBank">✓ Lưu đề</button></div></div>
-<div class="admin-detail-body"><div class="admin-meta-grid"><label>Loại bộ đề <b>*</b><select id="bankKind"><option value="practice">Đề luyện tập</option><option value="mock">Đề thi mô phỏng</option></select></label><label>Tên bộ đề <b>*</b><input autocomplete="off" id="bankTitle" maxlength="150" placeholder="Ví dụ: Kiểm tra Hóa 12 - Este, Lipit" type="text"/></label><label>Môn học <b>*</b><select id="bankSubject"><option value="toan">Toán học</option><option value="ly">Vật lý</option><option value="hoa">Hóa học</option><option value="sinh">Sinh học</option></select></label><label>Thời gian (phút) <b>*</b><input id="bankDuration" max="300" min="1" type="number" value="60"/></label><label class="span-full">Giới thiệu / ghi chú<textarea id="bankDescription" placeholder="Nội dung và phạm vi kiến thức..." rows="2"></textarea></label></div>
+<div class="admin-detail-body"><div class="admin-import-hint" id="adminLocalDraftNotice" role="status" hidden>
+<p>Bạn đang xem bản đã up. Máy này còn bản nháp chưa xuất bản. Mở bản nháp để kiểm tra trước khi xuất bản.</p>
+<button class="btn btn-ghost btn-sm" id="openLocalDraft" type="button">Mở bản nháp trên máy</button>
+</div><div class="admin-meta-grid"><label>Loại bộ đề <b>*</b><select id="bankKind"><option value="practice">Đề luyện tập</option><option value="mock">Đề thi mô phỏng</option></select></label><label>Tên bộ đề <b>*</b><input autocomplete="off" id="bankTitle" maxlength="150" placeholder="Ví dụ: Kiểm tra Hóa 12 - Este, Lipit" type="text"/></label><label>Môn học <b>*</b><select id="bankSubject"><option value="toan">Toán học</option><option value="ly">Vật lý</option><option value="hoa">Hóa học</option><option value="sinh">Sinh học</option></select></label><label>Thời gian (phút) <b>*</b><input id="bankDuration" max="300" min="1" type="number" value="60"/></label><label class="span-full">Giới thiệu / ghi chú<textarea id="bankDescription" placeholder="Nội dung và phạm vi kiến thức..." rows="2"></textarea></label></div>
 <div id="gradingConfig" aria-label="Cấu hình chấm điểm"></div>
 <div class="question-section-heading"><div><span class="eyebrow">NGÂN HÀNG CÂU HỎI</span><h3><span id="questionCount">0</span> câu trong đề</h3></div><button class="btn btn-ghost btn-sm" id="addQuestion">＋ Thêm câu</button></div>
 <div class="question-workspace"><div class="question-index"><div class="admin-question-list" id="questionList"></div></div><div class="question-details" id="questionDetails"><div class="admin-empty inner"><span class="admin-empty-icon">✎</span><b>Chọn một câu bên trái</b><p>Nhập nội dung, đáp án và lời giải ở đây.</p></div></div></div>
@@ -86,19 +92,19 @@
 <script src="supabase-config.js"></script>
 <script src="js/supabase-client.js?v=6"></script>
 <script src="js/mfa-route-guard.js?v=8"></script>
-<script src="js/admin-auth.js?v=6"></script><script src="js/role-visibility.js?v=13.0"></script><script src="js/jszip.min.js?v=6"></script><script src="js/admin.js?v=20.1"></script>
+<script src="js/admin-auth.js?v=6"></script><script src="js/role-visibility.js?v=13.0"></script><script src="js/jszip.min.js?v=6"></script><script src="js/admin.js?v=50.1-admin-refresh-1"></script>
 <script src="js/admin-bulk-v20.js?v=20.1"></script>
 
 <script src="js/calculator-v22.js?v=27"></script>
 <script src="js/site-unified-v27.js?v=28"></script>
 <script src="js/header-account.js?v=35"></script>
 <script src="js/theme-v28.js?v=49.1"></script>
-<script src="js/festivals-v32.js?v=32"></script>
+<script src="js/theme-catalog-v49.js?v=50"></script>
+<script src="js/festivals-v32.js?v=50"></script>
 <script src="js/festivals-v33.js?v=38"></script>
 <script src="js/festival-effects-v38.js?v=38"></script>
 <script src="js/festival-decor-v37.js?v=39"></script>
 <script src="js/festival-corners-v39.js?v=39"></script>
-<script src="js/theme-catalog-v49.js?v=49.1"></script>
-<script src="js/theme-store-v49.js?v=49.1"></script>
+<script src="js/announcement-v501.js?v=50.1"></script>
 </body>
 </html>

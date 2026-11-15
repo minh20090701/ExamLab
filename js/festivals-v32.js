@@ -12,7 +12,11 @@
     sakura:{name:'Anh đào',icon:'✿',title:'Mùa hoa anh đào',desc:'Chậm lại một chút, học thêm một điều hay.',song:'Cánh hoa đầu mùa'},
     night:{name:'Đêm sao',icon:'✦',title:'Dưới bầu trời sao',desc:'Một khoảng yên tĩnh dành cho việc học.',song:'Khoảng trời tĩnh lặng'}
   };
-  const keys=Object.keys(themes),musicKeys=['auto','off',...keys.filter(x=>x!=='classic'),'custom'];
+  const catalog=window.ExamLabThemeCatalogV49||[];
+  const motifs={"classic": "文", "christmas": "❄", "tet": "🏮", "midautumn": "☾", "halloween": "🎃", "night": "✦", "sakura": "✿", "rain": "☔", "forest": "❧", "autumn": "🍁", "ocean": "≈", "sunset": "☀", "cyber": "⌁", "cultivation": "☁", "magic": "✧", "cute": "♡", "winter": "❄", "desert": "◇", "blackgold": "◆", "space": "✦"};
+  const oldKeys=Object.keys(themes),builtinMusic=oldKeys.filter(x=>x!=='classic');
+  for(const c of catalog){if(!themes[c.id])themes[c.id]={name:c.name,icon:motifs[c.id]||'✦',title:c.name,desc:c.desc,song:''};}
+  const keys=Object.keys(themes),musicKeys=['auto','off',...builtinMusic,'custom'];
   const cacheKey='examlab.festival.v32',volumeKey='examlab.festival.volume',motionKey='examlab.festival.reduceMotion';
   const defaults={theme_id:'classic',music_id:'auto',music_url:'',music_label:'',effects:true,revision:1};
   const state={settings:defaults,displayed:defaults,serverReady:false,request:0,preview:false,dirty:false,admin:false,adminEpoch:0,formRevision:null,track:'',wantMusic:false,playTicket:0,focus:false,saving:false};
@@ -37,19 +41,22 @@
   let volume=Number(get(volumeKey,'25'));if(!Number.isFinite(volume))volume=25;volume=Math.min(100,Math.max(0,volume));
   $('festivalVolume').value=String(volume);audio.volume=volume/100;$('festivalVolumeValue').textContent=volume+'%';$('festivalReduce').checked=get(motionKey,'0')==='1';
   const reduced=window.matchMedia?.('(prefers-reduced-motion: reduce)');
-  function effectState(){root.dataset.festivalEffects=String(state.displayed.effects&&!$('festivalReduce').checked&&!reduced?.matches&&!state.focus&&state.displayed.theme_id!=='classic')}
+  const extraParticles=document.createElement('div');extraParticles.className='v50-particles';extraParticles.hidden=true;extraParticles.setAttribute('aria-hidden','true');document.body.append(extraParticles);
+  let extraKey='';
+  function effectState(){const active=state.displayed.effects&&!$('festivalReduce').checked&&!reduced?.matches&&!state.focus&&state.displayed.theme_id!=='classic';root.dataset.festivalEffects=String(active);const id=state.displayed.theme_id,c=catalog.find(t=>t.id===id);const use=active&&!oldKeys.includes(id)&&!document.hidden;extraParticles.hidden=!use;if(id!==extraKey){extraKey=id;extraParticles.replaceChildren();if(!oldKeys.includes(id)&&c){for(let i=0;i<12;i++){const p=document.createElement('span');p.textContent=motifs[id]||'✦';p.style.setProperty('--x',((i*37+7)%100)+'%');p.style.setProperty('--delay',(-i*1.6)+'s');p.style.setProperty('--dur',(10+i%5*2)+'s');extraParticles.append(p)}}}}
+  document.addEventListener('visibilitychange',effectState);
   function stopMusic(message=''){
     ++state.playTicket;state.wantMusic=false;audio.pause();$('festivalPlay').textContent='▶ Bật nhạc';$('festivalPlay').setAttribute('aria-pressed','false');if(message)$('festivalAudioStatus').textContent=message;
   }
-  function getTrack(settings){const id=settings.music_id==='auto'?settings.theme_id:settings.music_id;if(id==='off'||id==='classic')return{url:'',label:'Nhạc nền đang tắt'};if(id==='custom')return{url:settings.music_url,label:settings.music_label||'Nhạc do quản trị viên chọn'};return{url:new URL('assets/festivals/'+id+'.mp3',base).href,label:themes[id].song}}
+  function getTrack(settings){const id=settings.music_id==='auto'?settings.theme_id:settings.music_id;if(id==='off'||id==='classic'||(id!=='custom'&&!builtinMusic.includes(id)))return{url:'',label:'Nhạc nền đang tắt · có thể chọn nhạc chung'};if(id==='custom')return{url:settings.music_url,label:settings.music_label||'Nhạc do quản trị viên chọn'};return{url:new URL('assets/festivals/'+id+'.mp3',base).href,label:themes[id].song}}
   function apply(settings,preview=false){
-    state.displayed=settings;const theme=themes[settings.theme_id],track=getTrack(settings);root.dataset.festival=settings.theme_id;
+    state.displayed=settings;const theme=themes[settings.theme_id],track=getTrack(settings);root.dataset.festival=settings.theme_id;root.dataset.v49Theme=settings.theme_id;delete root.dataset.v49Effects;
     $('festivalTitle').textContent=theme.title;$('festivalSubtitle').textContent=theme.desc;$('festivalEmblem').textContent=theme.icon;
     $('festivalScope').textContent=preview?'ĐANG XEM THỬ · CHỈ TRÊN MÁY NÀY':'GIAO DIỆN CHUNG · '+theme.name.toLocaleUpperCase('vi');
     $('festivalTrackLabel').textContent=track.label;$('festivalPlay').disabled=!track.url;$('festivalVolume').disabled=!track.url;
     bar.hidden=settings.theme_id==='classic'&&!track.url&&!preview;
     if(track.url!==state.track){stopMusic();audio.removeAttribute('src');audio.load();state.track=track.url;$('festivalAudioStatus').textContent=track.url?'Nhấn Bật nhạc khi bạn muốn nghe.':''}
-    particles.replaceChildren();if(settings.theme_id!=='classic')for(let i=0;i<6;i++){const p=document.createElement('span');p.textContent={halloween:'✦',christmas:'❄',tet:'✿',midautumn:'✧',sakura:'✿',night:'✦'}[settings.theme_id];p.style.setProperty('--i',i);particles.append(p)}
+    particles.replaceChildren();if(settings.theme_id!=='classic')for(let i=0;i<6;i++){const p=document.createElement('span');p.textContent={halloween:'✦',christmas:'❄',tet:'✿',midautumn:'✧',sakura:'✿',night:'✦'}[settings.theme_id]||motifs[settings.theme_id]||'✦';p.style.setProperty('--i',i);particles.append(p)}
     effectState();if($('festivalCancelPreview'))$('festivalCancelPreview').hidden=!preview;
     document.dispatchEvent(new CustomEvent('examlab:festival-change',{detail:{theme:settings.theme_id,preview}}));
   }
@@ -70,7 +77,7 @@
   if($('view'))new MutationObserver(updateFocus).observe($('view'),{attributes:true,attributeFilter:['class']});
   updateFocus();
 
-  const adminHost=$('profileAdmin');let form=null;
+  const adminHost=$('profileAdmin')||$('globalThemeAdminV50');let form=null;
   function adminStatus(text,error=false){const p=$('festivalAdminStatus');if(p){p.textContent=text;p.classList.toggle('error',error)}}
   function customField(){if($('festivalCustomFields'))$('festivalCustomFields').hidden=$('festivalMusic').value!=='custom'}
   function fillForm(settings){
@@ -81,10 +88,10 @@
   function adminControls(){if(!form)return;$('festivalSave').disabled=!state.admin||!state.serverReady||state.saving;$('festivalTry').disabled=!state.admin||!state.serverReady||state.saving;$('festivalReload').disabled=state.saving}
   if(adminHost){
     const panel=document.createElement('section');panel.id='festivalAdmin';panel.className='festival-admin';panel.hidden=true;
-    panel.innerHTML=`<h3>Giao diện lễ hội & nhạc nền</h3><p>Chọn phong cách chung cho toàn website. Mỗi người vẫn tự chọn sáng/tối, âm lượng và bật/tắt nhạc.</p><form id="festivalForm"><fieldset><legend>Chọn giao diện</legend><div id="festivalChoices" class="festival-choices"></div></fieldset><label for="festivalMusic">Nhạc nền chung</label><select id="festivalMusic"><option value="auto">Theo giao diện đang chọn</option><option value="off">Tắt nhạc nền</option></select><div id="festivalCustomFields" hidden><label for="festivalUrl">Link file nhạc HTTPS công khai</label><input id="festivalUrl" type="url" maxlength="2048" placeholder="https://.../ban-nhac.mp3"><label for="festivalLabel">Tên bản nhạc (tùy chọn)</label><input id="festivalLabel" type="text" maxlength="80"><p class="festival-help">Dùng link trực tiếp MP3/OGG/WAV/M4A, không dùng link trang YouTube. Chỉ dùng nhạc bạn có quyền chia sẻ.</p></div><label class="festival-effect-label"><input id="festivalEffects" type="checkbox"> Cho phép hiệu ứng chuyển động nhẹ</label><div class="festival-admin-actions"><button id="festivalTry" type="button">Xem thử trên máy này</button><button id="festivalCancelPreview" type="button" hidden>Hủy xem thử</button><button id="festivalSave" type="submit">Áp dụng cho toàn website</button><button id="festivalReload" type="button">Tải lại cài đặt</button></div></form><p id="festivalAdminStatus" role="status"></p>`;
+    panel.innerHTML=`<h3>20 chủ đề chung & nhạc nền</h3><p>Chỉ quản trị viên được chọn chủ đề cho toàn website. Người dùng chỉ chọn sáng/tối, âm lượng và bật/tắt nhạc. Chủ đề mới không có bản nhạc riêng: chọn một bản có sẵn hoặc tải nhạc chung.</p><form id="festivalForm"><fieldset><legend>Chọn 1 trong 20 chủ đề chung</legend><div id="festivalChoices" class="festival-choices"></div></fieldset><label for="festivalMusic">Nhạc nền chung</label><select id="festivalMusic"><option value="auto">Theo giao diện đang chọn</option><option value="off">Tắt nhạc nền</option></select><div id="festivalCustomFields" hidden><label for="festivalUrl">Link file nhạc HTTPS công khai</label><input id="festivalUrl" type="url" maxlength="2048" placeholder="https://.../ban-nhac.mp3"><label for="festivalLabel">Tên bản nhạc (tùy chọn)</label><input id="festivalLabel" type="text" maxlength="80"><p class="festival-help">Dùng link trực tiếp MP3/OGG/WAV/M4A, không dùng link trang YouTube. Chỉ dùng nhạc bạn có quyền chia sẻ.</p></div><label class="festival-effect-label"><input id="festivalEffects" type="checkbox"> Cho phép hiệu ứng chuyển động nhẹ</label><div class="festival-admin-actions"><button id="festivalTry" type="button">Xem thử trên máy này</button><button id="festivalCancelPreview" type="button" hidden>Hủy xem thử</button><button id="festivalSave" type="submit">Áp dụng cho toàn website</button><button id="festivalReload" type="button">Tải lại cài đặt</button></div></form><p id="festivalAdminStatus" role="status"></p>`;
     adminHost.append(panel);form=$('festivalForm');
-    for(const id of keys){const label=document.createElement('label');label.className='festival-choice';const input=document.createElement('input');input.type='radio';input.name='festivalTheme';input.value=id;const thumb=document.createElement('span');thumb.className='festival-thumb';thumb.dataset.festivalThumb=id;thumb.setAttribute('aria-hidden','true');thumb.textContent=themes[id].icon;const name=document.createElement('strong');name.textContent=themes[id].name;label.append(input,thumb,name);$('festivalChoices').append(label)}
-    for(const id of keys.filter(x=>x!=='classic'))$('festivalMusic').add(new Option(themes[id].song,id));$('festivalMusic').add(new Option('Dùng link nhạc riêng','custom'));
+    for(const id of keys){const label=document.createElement('label');label.className='festival-choice';const input=document.createElement('input');input.type='radio';input.name='festivalTheme';input.value=id;const thumb=document.createElement('span');thumb.className='festival-thumb';thumb.dataset.festivalThumb=id;thumb.setAttribute('aria-hidden','true');thumb.textContent=themes[id].icon;const c=catalog.find(x=>x.id===id);if(c){const img=document.createElement('img');img.src=new URL(c.preview+'/light/'+(c.preview.includes('home-v49')?'home-room.svg':'room.svg'),base).href;img.alt='';img.loading='lazy';thumb.replaceChildren(img);}const name=document.createElement('strong');name.textContent=themes[id].name;label.append(input,thumb,name);$('festivalChoices').append(label)}
+    for(const id of builtinMusic)$('festivalMusic').add(new Option(themes[id].song,id));$('festivalMusic').add(new Option('Dùng link nhạc riêng','custom'));
     fillForm(defaults);adminControls();
     form.addEventListener('input',()=>{state.dirty=true});form.addEventListener('change',()=>{state.dirty=true;customField()});
     $('festivalTry').onclick=()=>{try{if(!state.admin||state.saving)return;const data=readForm();state.preview=true;apply(data,true);adminStatus('Đang xem thử trên máy này. Chưa thay đổi giao diện của người khác.');bar.scrollIntoView({behavior:reduced?.matches||$('festivalReduce').checked?'auto':'smooth',block:'start'})}catch(e){adminStatus(e.message,true)}};
@@ -94,7 +101,7 @@
       e.preventDefault();if(!state.admin||!state.serverReady||state.saving)return;const epoch=state.adminEpoch;
       try{const data=readForm();state.saving=true;adminControls();adminStatus('Đang áp dụng…');++state.request;
         const result=await db.rpc('examlab_v32_set_festival',{p_theme:data.theme_id,p_music:data.music_id,p_url:data.music_url,p_label:data.music_label,p_effects:data.effects,p_revision:data.revision});
-        if(epoch!==state.adminEpoch)return;if(result.error)throw result.error;++state.request;state.settings=sanitize(result.data);state.serverReady=true;state.preview=false;fillForm(state.settings);cache();apply(state.settings);
+        if(epoch!==state.adminEpoch)return;if(result.error){if(!oldKeys.includes(data.theme_id)&&/giao diện không hợp lệ|check constraint|23514/i.test(String(result.error.message||result.error.code||'')))throw Error('Supabase vẫn dùng 7 chủ đề. Chạy docs/SETUP_GLOBAL_THEMES_V50.sql rồi tải lại cài đặt.');throw result.error;}++state.request;state.settings=sanitize(result.data);state.serverReady=true;state.preview=false;fillForm(state.settings);cache();apply(state.settings);
         adminStatus('Đã áp dụng cho toàn website. Các trang đang mở cập nhật trong khoảng 60 giây hoặc khi được mở lại.');
       }catch(err){if(epoch===state.adminEpoch)adminStatus(String(err?.message||'Chưa lưu được cài đặt. Hãy thử lại.'),true)}finally{state.saving=false;adminControls()}
     };
@@ -108,13 +115,13 @@
     }catch(e){if(request!==state.request)return;adminControls();if(state.admin)adminStatus(/schema cache|does not exist|function|PGRST/i.test(String(e?.message||e))?'Chưa cài giao diện lễ hội. Chạy docs/SETUP_FESTIVALS_V32.sql rồi Tải lại cài đặt.':'Chưa tải được cài đặt chung. Kiểm tra mạng rồi Tải lại cài đặt.',true)}
   }
   async function checkAdmin(){
-    if(!form)return;const epoch=++state.adminEpoch;state.admin=false;$('festivalAdmin').hidden=true;adminControls();
-    try{const access=await window.ExamLabAdminAccess?.getAccess();if(epoch!==state.adminEpoch)return;state.admin=access?.allowed===true;$('festivalAdmin').hidden=!state.admin;
+    if(!form)return;const epoch=++state.adminEpoch;state.admin=false;$('festivalAdmin').hidden=true;if(adminHost.id==='globalThemeAdminV50')adminHost.hidden=true;adminControls();
+    try{const access=await window.ExamLabAdminAccess?.getAccess();if(epoch!==state.adminEpoch)return;state.admin=access?.allowed===true;$('festivalAdmin').hidden=!state.admin;if(adminHost.id==='globalThemeAdminV50')adminHost.hidden=!state.admin;
       if(state.admin){if(state.serverReady&&!state.dirty)fillForm(state.settings);adminControls();if(!state.serverReady)await refresh()}
       else if(state.preview){state.preview=false;apply(state.settings)}
     }catch{if(epoch===state.adminEpoch){state.preview=false;apply(state.settings)}}
   }
-  function revokeAdmin(){++state.adminEpoch;state.admin=false;state.dirty=false;state.formRevision=null;if(form){$('festivalAdmin').hidden=true;fillForm(defaults)}if(state.preview){state.preview=false;apply(state.settings)}adminControls()}
+  function revokeAdmin(){++state.adminEpoch;state.admin=false;state.dirty=false;state.formRevision=null;if(form){$('festivalAdmin').hidden=true;if(adminHost.id==='globalThemeAdminV50')adminHost.hidden=true;fillForm(defaults)}if(state.preview){state.preview=false;apply(state.settings)}adminControls()}
   db?.auth?.onAuthStateChange((event)=>{if(form){revokeAdmin();if(event!=='SIGNED_OUT')setTimeout(checkAdmin,0)}});
   document.addEventListener('examlab-role-change',e=>{if(e.detail?.admin)checkAdmin();else revokeAdmin()});
   window.addEventListener('storage',e=>{if(e.key===cacheKey){const c=readCache();if(c&&!state.preview&&!state.serverReady){state.settings=c;apply(c)}else refresh()}if(e.key===motionKey){$('festivalReduce').checked=get(motionKey,'0')==='1';effectState()}if(e.key===volumeKey){const v=Number(get(volumeKey,'25'));if(Number.isFinite(v)){$('festivalVolume').value=String(Math.min(100,Math.max(0,v)));audio.volume=Number($('festivalVolume').value)/100;$('festivalVolumeValue').textContent=$('festivalVolume').value+'%'}}});
