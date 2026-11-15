@@ -1,0 +1,122 @@
+/* ExamLab: home artwork (V44 + V46, cascade preserved). */
+/* ExamLab V44 — live DOM, original mockup artwork, responsive homepage only. */
+#view:has(.home-hero-v41){--home44-room:none;--home44-books:none;--home44-questions:none;--home44-submitted:none;--home44-practice:none;--home44-mock:none;--home44-branch:none;--home44-landscape:none}
+html[data-festival=sakura] #view:has(.home-hero-v41){--home44-room:url('../assets/home-v44/room.webp');--home44-books:url('../assets/home-v44/books.webp');--home44-questions:url('../assets/home-v44/questions.webp');--home44-submitted:url('../assets/home-v44/submitted.webp');--home44-practice:url('../assets/home-v44/practice.webp');--home44-mock:url('../assets/home-v44/mock.webp');--home44-branch:url('../assets/home-v44/branch.webp');--home44-landscape:url('../assets/home-v44/landscape.webp')}
+/* Other festivals keep their original seasonal illustrations and theme colors. */
+html body #view .hero.home-hero-v41{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);align-items:center;gap:clamp(18px,3vw,42px)!important;min-height:0!important;padding:34px clamp(24px,3vw,46px)!important;border-radius:24px;isolation:isolate;overflow:hidden}
+html body #view .home-hero-v41 .hero-copy{max-width:none;position:relative;z-index:1;min-width:0}
+html body #view .home-hero-v41 .hero-copy h1{font-size:clamp(30px,3.1vw,48px)!important;line-height:1.15!important;margin:12px 0!important}
+.home-hero-v41 .hero-copy::after{content:var(--home-quote,"Chăm học hôm nay · Thành tài mai sau");border-color:var(--line);color:var(--violet);font-weight:800;max-width:100%;white-space:normal;box-sizing:border-box}
+html body #view .home-hero-v41::before{content:"";inset:auto auto 0 0;width:230px;height:160px;background:var(--home44-landscape) left bottom/contain no-repeat;opacity:.50;z-index:0;pointer-events:none}
+html body #view .home-hero-v41::after{content:"";inset:0 auto auto 0;width:195px;height:130px;background:var(--home44-branch) left top/contain no-repeat;opacity:.64;z-index:0;pointer-events:none}
+html body #view .home-hero-v41 .study-room{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-areas:"heading scene" "summary scene";align-content:center;align-items:center;gap:8px;align-self:center;min-height:250px;min-width:0;padding:22px!important;border-radius:21px;overflow:hidden;isolation:isolate;background:linear-gradient(120deg,var(--paper),var(--soft))!important;box-shadow:0 8px 28px #00000012,inset 0 0 0 3px var(--paper)!important}
+#view .home-hero-v41 .study-room-heading{grid-area:heading;min-width:0;position:relative;z-index:1;margin:0}
+#view .home-hero-v41 .study-room-heading::after{display:none}
+#view .home-hero-v41 .study-room h2{font-size:clamp(27px,3.3vw,47px)!important;line-height:1.15!important;overflow-wrap:normal}
+#view .home-hero-v41 .study-room-eyebrow{font-size:10px;letter-spacing:.10em;line-height:1.5}
+#view .home-hero-v41 .study-room-seal{display:none}
+#view .home-hero-v41 .study-room-summary{grid-area:summary;min-width:0;position:relative;z-index:1;display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding-top:12px;margin:0;border-top:1px solid var(--line)}
+#view .home-hero-v41 .study-room-summary strong{font-size:clamp(38px,4.5vw,66px)!important;line-height:1!important}
+#view .home-hero-v41 .study-room-summary span{font-size:13px;max-width:none;line-height:1.45}
+#view .home-hero-v41 .study-room-summary::after{display:none}
+#view .home-hero-v41 .study-room-scene{grid-area:scene;min-width:0;max-width:none;width:100%;height:auto;margin:0;aspect-ratio:320/206;opacity:1}
+#view .home-hero-v41 .study-room::before{inset:6px;z-index:-1;opacity:.65}
+#view .home-hero-v41 .study-room::after{inset:0;z-index:-1;background:var(--home44-room) right center/auto 100% no-repeat;opacity:.85;pointer-events:none}
+/* The three statistic cards have real numbers and independent decorative images. */
+#view:has(.home-hero-v41) .stat-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:18px 0 24px!important}
+html body #view:has(.home-hero-v41) .stat-card{display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:flex-start!important;gap:12px!important;min-width:0;min-height:108px!important;padding:14px 12px!important;border-radius:18px!important;overflow:hidden;isolation:isolate;position:relative}
+#view:has(.home-hero-v41) .stat-card>div{position:relative;z-index:1;margin:0;min-width:0}
+#view:has(.home-hero-v41) .stat-card .stat-ico{position:relative;z-index:1;flex-shrink:0}
+#view:has(.home-hero-v41) .stat-card .stat-num{font-size:clamp(23px,3.1vw,35px)!important;line-height:1.1!important}
+#view:has(.home-hero-v41) .stat-card .stat-caption{font-size:13px!important;line-height:1.4!important}
+#view:has(.home-hero-v41) .stat-card::before{content:"";inset:0 0 0 auto;width:44%;height:100%;background:var(--home44-books) right bottom/contain no-repeat;z-index:-1;opacity:.9;pointer-events:none}
+#view:has(.home-hero-v41) .stat-card:nth-child(2)::before{background-image:var(--home44-questions)}
+#view:has(.home-hero-v41) .stat-card:nth-child(3)::before{background-image:var(--home44-submitted)}
+#view:has(.home-hero-v41) .stat-card::after{display:none}
+/* Category cards have large distinct art, with text staying in the safe left area. */
+#view:has(.home-hero-v41) .catalog-modes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:14px;margin:22px 0 24px!important}
+html body #view:has(.home-hero-v41) .catalog-mode{position:relative;isolation:isolate;overflow:hidden;min-width:0;min-height:150px;padding:19px 20px!important;justify-content:center;gap:6px;border-radius:20px!important;text-align:left}
+#view:has(.home-hero-v41) .catalog-mode>span{position:relative;z-index:1;max-width:65%;font-size:clamp(17px,2vw,25px)!important;line-height:1.25}
+#view:has(.home-hero-v41) .catalog-mode>small{position:relative;z-index:1;max-width:64%;font-size:13px!important;line-height:1.45;margin:4px 0 0}
+#view:has(.home-hero-v41) .catalog-mode::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--home44-practice) right bottom/auto 100% no-repeat;opacity:.92;pointer-events:none}
+#view:has(.home-hero-v41) .catalog-mode:nth-child(2)::before{background-image:var(--home44-mock)}
+#view:has(.home-hero-v41) .catalog-mode::after{display:none}
+#view:has(.home-hero-v41) .section-heading::after{background:var(--home44-branch) right center/contain no-repeat;opacity:.55;width:180px;z-index:0}
+/* Dark backgrounds must remain dark, not have bright pasted-on rectangular images. */
+/* Mobile: compact hero, room illustration, three stats, two category cards. */
+@media(max-width:900px){
+ html body #view .hero.home-hero-v41{grid-template-columns:minmax(0,1fr);gap:18px!important;padding:22px 18px!important}
+ html body #view .home-hero-v41 .hero-copy h1{font-size:clamp(27px,6.6vw,38px)!important}
+ html body #view .home-hero-v41 .study-room{min-height:205px;padding:17px!important;grid-template-columns:minmax(0,1fr) minmax(0,1.02fr)}
+ #view .home-hero-v41 .study-room h2{font-size:clamp(27px,6vw,38px)!important}
+ html body #view .home-hero-v41::before{width:145px;height:100px;opacity:.28}
+ html body #view .home-hero-v41::after{width:125px;height:84px;opacity:.30}
+ html body #view:has(.home-hero-v41) .stat-card{flex-direction:column!important;align-items:flex-start!important;justify-content:flex-start!important;gap:7px!important;min-height:117px!important;padding:11px 9px!important}
+ #view:has(.home-hero-v41) .stat-card .stat-num{font-size:clamp(22px,5vw,29px)!important}
+ #view:has(.home-hero-v41) .stat-card .stat-caption{font-size:clamp(10px,2.5vw,12px)!important}
+ #view:has(.home-hero-v41) .stat-card::before{width:66%;height:80%;inset:auto 0 0 auto;opacity:.45}
+ html body #view:has(.home-hero-v41) .catalog-mode{min-height:148px;justify-content:flex-start;padding:13px 11px!important}
+ #view:has(.home-hero-v41) .catalog-mode>span,#view:has(.home-hero-v41) .catalog-mode>small{max-width:100%}
+ #view:has(.home-hero-v41) .catalog-mode>span{font-size:clamp(15px,3.9vw,20px)!important}
+ #view:has(.home-hero-v41) .catalog-mode>small{font-size:11px!important}
+ #view:has(.home-hero-v41) .catalog-mode::before{background-size:auto 59%;opacity:.8}
+}
+@media(max-width:540px){
+ html body #view .hero.home-hero-v41{padding:20px 13px!important;gap:15px!important}
+ html body #view .home-hero-v41 .study-room{min-height:158px;padding:13px!important;gap:5px;grid-template-columns:minmax(0,1fr) minmax(0,.90fr)}
+ #view .home-hero-v41 .study-room-eyebrow{font-size:8px;letter-spacing:.06em}
+ #view .home-hero-v41 .study-room h2{font-size:25px!important}
+ #view .home-hero-v41 .study-room-summary{gap:5px;padding-top:9px}
+ #view .home-hero-v41 .study-room-summary strong{font-size:35px!important}
+ #view .home-hero-v41 .study-room-summary span{font-size:11px}
+ #view:has(.home-hero-v41) .stat-row,#view:has(.home-hero-v41) .catalog-modes{gap:8px!important}
+ html body #view:has(.home-hero-v41) .catalog-mode{min-height:140px;padding:12px 10px!important}
+ #view:has(.home-hero-v41) .catalog-mode::before{background-size:auto 55%}
+ #view:has(.home-hero-v41) .section-heading::after{width:85px;opacity:.28}
+}
+@media(max-width:360px){#view .home-hero-v41 .study-room h2{font-size:21px!important}#view .home-hero-v41 .study-room-summary strong{font-size:29px!important}#view .home-hero-v41 .study-room-summary span{font-size:10px}html body #view:has(.home-hero-v41) .stat-card{padding:9px 7px!important}#view:has(.home-hero-v41) .catalog-mode>span{font-size:14px!important}}
+@media(prefers-reduced-motion:reduce){#view:has(.home-hero-v41) *{scroll-behavior:auto!important}}
+
+/* V46: seven independent seasonal artwork sets, full light/dark palettes. Homepage only. */
+html[data-festival="classic"][data-theme="light"] #view:has(.home-hero-v41),html:not([data-festival])[data-theme="light"] #view:has(.home-hero-v41){--home44-room:url("../assets/home-v46/classic/light/room.svg");--home44-books:url("../assets/home-v46/classic/light/books.svg");--home44-questions:url("../assets/home-v46/classic/light/questions.svg");--home44-submitted:url("../assets/home-v46/classic/light/submitted.svg");--home44-practice:url("../assets/home-v46/classic/light/practice.svg");--home44-mock:url("../assets/home-v46/classic/light/mock.svg");--home44-branch:url("../assets/home-v46/classic/light/branch.svg");--home44-landscape:url("../assets/home-v46/classic/light/landscape.svg")}
+html[data-festival="classic"][data-theme="dark"] #view:has(.home-hero-v41),html:not([data-festival])[data-theme="dark"] #view:has(.home-hero-v41){--home44-room:url("../assets/home-v46/classic/dark/room.svg");--home44-books:url("../assets/home-v46/classic/dark/books.svg");--home44-questions:url("../assets/home-v46/classic/dark/questions.svg");--home44-submitted:url("../assets/home-v46/classic/dark/submitted.svg");--home44-practice:url("../assets/home-v46/classic/dark/practice.svg");--home44-mock:url("../assets/home-v46/classic/dark/mock.svg");--home44-branch:url("../assets/home-v46/classic/dark/branch.svg");--home44-landscape:url("../assets/home-v46/classic/dark/landscape.svg")}
+html[data-festival="christmas"][data-theme="light"] #view:has(.home-hero-v41){--home44-room:url("../assets/home-v46/christmas/light/room.svg");--home44-books:url("../assets/home-v46/christmas/light/books.svg");--home44-questions:url("../assets/home-v46/christmas/light/questions.svg");--home44-submitted:url("../assets/home-v46/christmas/light/submitted.svg");--home44-practice:url("../assets/home-v46/christmas/light/practice.svg");--home44-mock:url("../assets/home-v46/christmas/light/mock.svg");--home44-branch:url("../assets/home-v46/christmas/light/branch.svg");--home44-landscape:url("../assets/home-v46/christmas/light/landscape.svg")}
+html[data-festival="christmas"][data-theme="dark"] #view:has(.home-hero-v41){--home44-room:url("../assets/home-v46/christmas/dark/room.svg");--home44-books:url("../assets/home-v46/christmas/dark/books.svg");--home44-questions:url("../assets/home-v46/christmas/dark/questions.svg");--home44-submitted:url("../assets/home-v46/christmas/dark/submitted.svg");--home44-practice:url("../assets/home-v46/christmas/dark/practice.svg");--home44-mock:url("../assets/home-v46/christmas/dark/mock.svg");--home44-branch:url("../assets/home-v46/christmas/dark/branch.svg");--home44-landscape:url("../assets/home-v46/christmas/dark/landscape.svg")}
+html[data-festival="tet"][data-theme="light"] #view:has(.home-hero-v41){--home44-room:url("../assets/home-v46/tet/light/room.svg");--home44-books:url("../assets/home-v46/tet/light/books.svg");--home44-questions:url("../assets/home-v46/tet/light/questions.svg");--home44-submitted:url("../assets/home-v46/tet/light/submitted.svg");--home44-practice:url("../assets/home-v46/tet/light/practice.svg");--home44-mock:url("../assets/home-v46/tet/light/mock.svg");--home44-branch:url("../assets/home-v46/tet/light/branch.svg");--home44-landscape:url("../assets/home-v46/tet/light/landscape.svg")}
+html[data-festival="tet"][data-theme="dark"] #view:has(.home-hero-v41){--home44-room:url("../assets/home-v46/tet/dark/room.svg");--home44-books:url("../assets/home-v46/tet/dark/books.svg");--home44-questions:url("../assets/home-v46/tet/dark/questions.svg");--home44-submitted:url("../assets/home-v46/tet/dark/submitted.svg");--home44-practice:url("../assets/home-v46/tet/dark/practice.svg");--home44-mock:url("../assets/home-v46/tet/dark/mock.svg");--home44-branch:url("../assets/home-v46/tet/dark/branch.svg");--home44-landscape:url("../assets/home-v46/tet/dark/landscape.svg")}
+html[data-festival="midautumn"][data-theme="light"] #view:has(.home-hero-v41){--home44-room:url("../assets/home-v46/midautumn/light/room.svg");--home44-books:url("../assets/home-v46/midautumn/light/books.svg");--home44-questions:url("../assets/home-v46/midautumn/light/questions.svg");--home44-submitted:url("../assets/home-v46/midautumn/light/submitted.svg");--home44-practice:url("../assets/home-v46/midautumn/light/practice.svg");--home44-mock:url("../assets/home-v46/midautumn/light/mock.svg");--home44-branch:url("../assets/home-v46/midautumn/light/branch.svg");--home44-landscape:url("../assets/home-v46/midautumn/light/landscape.svg")}
+html[data-festival="midautumn"][data-theme="dark"] #view:has(.home-hero-v41){--home44-room:url("../assets/home-v46/midautumn/dark/room.svg");--home44-books:url("../assets/home-v46/midautumn/dark/books.svg");--home44-questions:url("../assets/home-v46/midautumn/dark/questions.svg");--home44-submitted:url("../assets/home-v46/midautumn/dark/submitted.svg");--home44-practice:url("../assets/home-v46/midautumn/dark/practice.svg");--home44-mock:url("../assets/home-v46/midautumn/dark/mock.svg");--home44-branch:url("../assets/home-v46/midautumn/dark/branch.svg");--home44-landscape:url("../assets/home-v46/midautumn/dark/landscape.svg")}
+html[data-festival="halloween"][data-theme="light"] #view:has(.home-hero-v41){--home44-room:url("../assets/home-v46/halloween/light/room.svg");--home44-books:url("../assets/home-v46/halloween/light/books.svg");--home44-questions:url("../assets/home-v46/halloween/light/questions.svg");--home44-submitted:url("../assets/home-v46/halloween/light/submitted.svg");--home44-practice:url("../assets/home-v46/halloween/light/practice.svg");--home44-mock:url("../assets/home-v46/halloween/light/mock.svg");--home44-branch:url("../assets/home-v46/halloween/light/branch.svg");--home44-landscape:url("../assets/home-v46/halloween/light/landscape.svg")}
+html[data-festival="halloween"][data-theme="dark"] #view:has(.home-hero-v41){--home44-room:url("../assets/home-v46/halloween/dark/room.svg");--home44-books:url("../assets/home-v46/halloween/dark/books.svg");--home44-questions:url("../assets/home-v46/halloween/dark/questions.svg");--home44-submitted:url("../assets/home-v46/halloween/dark/submitted.svg");--home44-practice:url("../assets/home-v46/halloween/dark/practice.svg");--home44-mock:url("../assets/home-v46/halloween/dark/mock.svg");--home44-branch:url("../assets/home-v46/halloween/dark/branch.svg");--home44-landscape:url("../assets/home-v46/halloween/dark/landscape.svg")}
+html[data-festival="night"][data-theme="light"] #view:has(.home-hero-v41){--home44-room:url("../assets/home-v46/night/light/room.svg");--home44-books:url("../assets/home-v46/night/light/books.svg");--home44-questions:url("../assets/home-v46/night/light/questions.svg");--home44-submitted:url("../assets/home-v46/night/light/submitted.svg");--home44-practice:url("../assets/home-v46/night/light/practice.svg");--home44-mock:url("../assets/home-v46/night/light/mock.svg");--home44-branch:url("../assets/home-v46/night/light/branch.svg");--home44-landscape:url("../assets/home-v46/night/light/landscape.svg")}
+html[data-festival="night"][data-theme="dark"] #view:has(.home-hero-v41){--home44-room:url("../assets/home-v46/night/dark/room.svg");--home44-books:url("../assets/home-v46/night/dark/books.svg");--home44-questions:url("../assets/home-v46/night/dark/questions.svg");--home44-submitted:url("../assets/home-v46/night/dark/submitted.svg");--home44-practice:url("../assets/home-v46/night/dark/practice.svg");--home44-mock:url("../assets/home-v46/night/dark/mock.svg");--home44-branch:url("../assets/home-v46/night/dark/branch.svg");--home44-landscape:url("../assets/home-v46/night/dark/landscape.svg")}
+html[data-festival="sakura"][data-theme="light"] #view:has(.home-hero-v41){--home44-room:url("../assets/home-v44/room.webp");--home44-books:url("../assets/home-v44/books.webp");--home44-questions:url("../assets/home-v44/questions.webp");--home44-submitted:url("../assets/home-v44/submitted.webp");--home44-practice:url("../assets/home-v44/practice.webp");--home44-mock:url("../assets/home-v44/mock.webp");--home44-branch:url("../assets/home-v44/branch.webp");--home44-landscape:url("../assets/home-v44/landscape.webp")}
+html[data-festival="sakura"][data-theme="dark"] #view:has(.home-hero-v41){--home44-room:url("../assets/home-v46/sakura/dark/room.svg");--home44-books:url("../assets/home-v46/sakura/dark/books.svg");--home44-questions:url("../assets/home-v46/sakura/dark/questions.svg");--home44-submitted:url("../assets/home-v46/sakura/dark/submitted.svg");--home44-practice:url("../assets/home-v46/sakura/dark/practice.svg");--home44-mock:url("../assets/home-v46/sakura/dark/mock.svg");--home44-branch:url("../assets/home-v46/sakura/dark/branch.svg");--home44-landscape:url("../assets/home-v46/sakura/dark/landscape.svg")}
+
+/* Art is behind live text, not a screenshot; reserve clear space on both screen sizes. */
+html body #view .home-hero-v41 .study-room::after{background:var(--home44-room) right center/auto 100% no-repeat;opacity:1;filter:none;mask-image:linear-gradient(90deg,transparent 24%,#000 49%);-webkit-mask-image:linear-gradient(90deg,transparent 24%,#000 49%)}
+html body #view .home-hero-v41 .study-room-scene{visibility:hidden}
+html body #view .home-hero-v41 .study-room{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);min-height:250px}
+html body #view .home-hero-v41 .study-room-heading,html body #view .home-hero-v41 .study-room-summary{max-width:100%;min-width:0}
+html body #view .home-hero-v41 .study-room h2{overflow-wrap:break-word}
+html body #view .home-hero-v41 .study-room::before{z-index:0;pointer-events:none}
+html body #view:has(.home-hero-v41) .stat-card::before{width:42%;height:100%;inset:0 0 0 auto;opacity:.94;filter:none;background-size:contain;mask-image:linear-gradient(90deg,transparent,#000 18%)}
+html body #view:has(.home-hero-v41) .catalog-mode::before{inset:0;opacity:.95;filter:none;background-size:auto 99%;mask-image:linear-gradient(90deg,transparent 40%,#000 67%)}
+html body #view:has(.home-hero-v41) .catalog-mode>span,html body #view:has(.home-hero-v41) .catalog-mode>small{max-width:60%}
+html body #view .home-hero-v41::after{opacity:.64;filter:none;background-size:contain}
+html body #view .home-hero-v41::before{opacity:.43;filter:none;background-size:contain;mask-image:linear-gradient(90deg,#000,transparent 100%)}
+html[data-theme=dark] body #view .home-hero-v41::before{opacity:.25}
+html[data-theme=dark] body #view .home-hero-v41::after{opacity:.53}
+html[data-theme=dark] body #view .home-hero-v41 .study-room::after{opacity:.9}
+/* Wide-screen margins gain a quiet seasonal vignette, not fixed overlays over controls. */
+@media(min-width:1500px){html body #view .hero.home-hero-v41{gap:32px!important}html body #view .home-hero-v41::before{width:280px;height:182px}html body #view .home-hero-v41::after{width:245px;height:160px}}
+@media(max-width:900px){html body #view .home-hero-v41 .study-room{min-height:205px}html body #view:has(.home-hero-v41) .stat-card::before{width:60%;height:70%;inset:auto 0 0 auto;opacity:.45}html body #view:has(.home-hero-v41) .catalog-mode>span,html body #view:has(.home-hero-v41) .catalog-mode>small{max-width:100%}html body #view:has(.home-hero-v41) .catalog-mode::before{background-size:auto 56%;mask-image:none;opacity:.86}}
+@media(max-width:540px){html body #view .home-hero-v41 .study-room{min-height:170px;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr)}html body #view .home-hero-v41 .study-room::after{background-size: auto 100%;mask-image:linear-gradient(90deg,transparent 28%,#000 55%)}html body #view .home-hero-v41::before{opacity:.2}html body #view .home-hero-v41::after{opacity:.38}html body #view:has(.home-hero-v41) .stat-card::before{opacity:.38}html body #view:has(.home-hero-v41) .catalog-mode::before{background-size:auto 54%;opacity:.85}}
+@media(max-width:360px){html body #view .home-hero-v41 .study-room{min-height:157px}html body #view:has(.home-hero-v41) .catalog-mode::before{background-size:auto 48%}}
+
+/* V46 QA: keep decoration outside the text-safe area, including narrow screens. */
+html body #view .home-hero-v41 .study-room::after{background-size:62% 100%;mask-image:linear-gradient(90deg,transparent 37%,#000 55%);-webkit-mask-image:linear-gradient(90deg,transparent 37%,#000 55%)}
+html body #view .home-hero-v41::after{opacity:.40;mask-image:linear-gradient(120deg,#000 15%,#0008 50%,transparent 90%)}
+html[data-theme=dark] body #view .home-hero-v41::after{opacity:.36}
+html body #view .home-hero-v41 .hero-copy::after{max-width:max-content}
+@media(max-width:540px){html body #view .home-hero-v41 .study-room::after{background-size:61% 100%;mask-image:linear-gradient(90deg,transparent 37%,#000 60%);-webkit-mask-image:linear-gradient(90deg,transparent 37%,#000 60%)}html body #view .home-hero-v41::after{opacity:.26}html body #view .home-hero-v41 .hero-copy::after{max-width:100%}}

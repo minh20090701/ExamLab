@@ -1,0 +1,2 @@
+EXAMLAB V49.1 CLEAN — FULL SOURCE
+Đọc README_V49_1_CLEAN.md tại thư mục gốc. Đây là source đầy đủ, không cần chạy UPDATE_CACHE_V49_1.cmd hoặc cài các bản vá cũ.

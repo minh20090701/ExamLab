@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#542821">
+<title>Hồ sơ & bảo mật · ExamLab</title>
+<script>try {document.documentElement.dataset.theme = localStorage.getItem('examlab.theme') === 'dark' ? 'dark' : 'light'} catch {document.documentElement.dataset.theme = 'light'}</script>
+<link rel="stylesheet" href="css/base.css?v=8">
+<link rel="stylesheet" href="css/profile.css?v=11">
+<link rel="stylesheet" href="css/examlab-dialogs-v14.css?v=14.0">
+<link rel="stylesheet" href="css/calculator-v22.css?v=27">
+<link rel="stylesheet" href="css/mode-switch-v7.css?v=27">
+<link rel="stylesheet" href="css/header-stable-v10.css?v=27">
+<link rel="stylesheet" href="css/header-full-v13.css?v=27">
+<link rel="stylesheet" href="css/site-unified-v27.css?v=27">
+<link rel="stylesheet" href="css/theme-v28.css?v=28">
+<link rel="stylesheet" href="css/festivals-v32.css?v=32">
+<link rel="stylesheet" href="css/festivals-v33.css?v=33">
+<link rel="stylesheet" href="css/theme-complete-v34.css?v=34">
+<link rel="stylesheet" href="css/festival-decor-v37.css?v=37">
+<link rel="stylesheet" href="css/notifications-v37.css?v=37">
+<link rel="stylesheet" href="css/festival-effects-v38.css?v=38">
+<link rel="stylesheet" href="css/theme-decor-v491.css?v=49.1">
+<link rel="stylesheet" href="css/header-account-v35.css?v=35">
+<link rel="stylesheet" href="css/theme-readable-v36.css?v=36">
+<link rel="stylesheet" href="css/theme-store-v491.css?v=49.1">
+</head>
+<body class="profile-page">
+<header class="topbar" id="topbar">
+<div class="topbar-inner">
+<a class="brand" href="index.html">
+<span aria-hidden="true" class="brand-icon">文</span><span class="brand-words"><b>EXAM<span>LAB</span></b><small>TRƯỜNG THI KHOA BẢNG</small></span>
+</a>
+<nav aria-label="Điều hướng" class="header-nav site-nav-v10"><a class="nav-link" href="index.html">Tủ đề ôn tập</a><a class="nav-link" href="index.html?view=history">Sổ khoa cử</a><a class="nav-link" href="documents.html">Thư viện tài liệu</a><a class="nav-link" href="study.html">Bấm giờ học</a><a class="nav-link" href="index.html?view=guide">Chỉ dẫn</a><a class="nav-link" href="friends-beta/index.html">Bạn bè <small>(Beta)</small></a></nav>
+<div class="top-actions">
+<button aria-label="Bật hoặc tắt chế độ tối" class="mode-switch-v7" data-mode-v7="" onclick="var r=document.documentElement;var t=r.dataset.theme==='dark'?'light':'dark';r.dataset.theme=t;try{localStorage.setItem('examlab.theme',t)}catch(e){};this.setAttribute('aria-pressed',String(t==='dark'));var m=document.querySelector('meta[name=theme-color]');if(m)m.content=t==='dark'?'#201b19':'#542821';" title="Bấm để đổi chế độ Sáng/Tối" type="button"><span aria-hidden="true" class="mode-indicator-v7"></span><span aria-hidden="true" class="mode-label-light-v7">SÁNG</span><span aria-hidden="true" class="mode-label-dark-v7">TỐI</span></button>
+<button type="button" id="excalcSettingsOpen" class="excalc-settings-trigger" aria-label="Cài đặt" title="Cài đặt" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M9 11h1m4 0h1m-6 3h1m4 0h1m-6 3h1m4 0h1"/></svg></button>
+<a aria-label="Xem hồ sơ và tài khoản" class="account-link profile-top-link" href="login.html" id="accountLink"><span aria-hidden="true" class="account-mark">✦</span><span class="account-link-label"><span class="account-pre">Hồ sơ</span><span class="account-word" id="accountLabel">Tài khoản</span></span></a>
+</div>
+</div>
+</header>
+<aside class="site-announcement" aria-label="Thông báo"><span class="announcement-label">Thông báo</span><div class="announcement-window"><p id="announcementText">Chào mừng bạn đến với ExamLab · Chúc bạn học tập hiệu quả!</p></div></aside><div class="profile-session-actions"><button id="profileLogout" class="btn btn-ghost" type="button">Đăng xuất</button></div>
+<main class="profile-main">
+<div class="profile-heading"><div><span class="eyebrow">TÀI KHOẢN KHOA BẢNG</span><h1>Hồ sơ & bảo mật</h1><p>Quản lý thông tin cá nhân và tăng cường an toàn tài khoản.</p></div></div>
+<p id="profileGlobalMessage" class="profile-message" role="status"></p>
+<div id="profileGuard" hidden></div>
+<div id="profileContent" class="profile-layout" hidden>
+<section class="profile-panel">
+<h2>Thông tin cá nhân</h2><p>Xin chào, <strong id="profileNamePreview">Sĩ tử</strong></p>
+<form id="profileForm" class="profile-form">
+<label for="profileName">Tên hiển thị<input id="profileName" name="name" type="text" maxlength="40" minlength="2" required autocomplete="nickname"></label>
+<label for="profileBirth">Ngày sinh (tùy chọn)<input id="profileBirth" name="birth" type="date" autocomplete="bday"></label>
+<label for="profileEmail">Email đăng nhập (không thể chỉnh sửa tại đây)<input id="profileEmail" type="email" autocomplete="email" readonly></label>
+<label for="profilePhone">Số điện thoại liên hệ (tùy chọn)<input id="profilePhone" type="tel" autocomplete="tel" maxlength="20" placeholder="Không bắt buộc"></label>
+<p class="profile-note">Số điện thoại chỉ để lưu thông tin liên hệ, chưa dùng để xác thực hoặc đăng nhập bằng SMS.</p>
+<div class="profile-actions"><button id="profileSave" type="submit" class="btn btn-primary">Lưu thông tin</button></div>
+</form><p id="profileSaveMessage" class="profile-message" role="status"></p>
+</section>
+<section class="profile-panel">
+<h2>Đổi mật khẩu</h2><p>Đặt mật khẩu mới cho tài khoản. Mật khẩu không được lưu vào hồ sơ.</p>
+<form id="passwordForm" class="profile-form">
+<label for="profilePassword">Mật khẩu mới<input id="profilePassword" type="password" minlength="8" maxlength="128" autocomplete="new-password" required></label>
+<label for="profilePasswordRepeat">Nhập lại mật khẩu<input id="profilePasswordRepeat" type="password" minlength="8" maxlength="128" autocomplete="new-password" required></label>
+<div class="profile-actions"><button id="passwordSave" type="submit" class="btn btn-primary">Cập nhật mật khẩu</button></div>
+</form><p id="passwordMessage" class="profile-message" role="status"></p>
+</section>
+<section class="profile-panel profile-panel-wide" id="excalcProfileSettings">
+<h2>Cài đặt học tập</h2><p>Tùy chỉnh công cụ hỗ trợ khi luyện đề.</p>
+<div class="excalc-setting"><div><strong>Máy tính bỏ túi</strong><p>Hiện biểu tượng máy tính ở góc dưới bên phải trang luyện đề. Cài đặt được ghi nhớ trên thiết bị.</p></div><button type="button" class="excalc-switch" data-excalc-toggle role="switch" aria-checked="false" aria-label="Bật máy tính bỏ túi"><span></span></button></div>
+<p class="excalc-pref-status" data-excalc-status role="status">Đang tắt</p>
+</section>
+<section class="profile-panel profile-panel-wide">
+<h2>Authenticator (2FA)</h2><p>Xác minh bằng ứng dụng tạo mã 6 số sau khi đăng nhập bằng email và mật khẩu.</p>
+<div class="profile-card-status" id="mfaStatus">Đang kiểm tra bảo mật...</div>
+<div><button id="mfaStart" class="btn btn-primary" type="button" hidden>Bật Authenticator</button></div>
+<div id="mfaActive" hidden><p>Authenticator đang bảo vệ tài khoản này. Khi tắt, bạn phải xác minh lại bằng mã 6 chữ số từ ứng dụng.</p><button type="button" id="mfaDisable" class="btn btn-ghost">Tắt Authenticator</button></div>
+<div id="mfaEnroll" class="mfa-setup" hidden>
+<p>Mở ứng dụng Authenticator, quét mã QR, sau đó nhập mã 6 chữ số để kích hoạt.</p><img id="mfaQr" alt="Mã QR thiết lập Authenticator" class="mfa-qr"><p class="profile-note">Nếu không quét được QR, nhập mã bí mật vào ứng dụng. Không chia sẻ mã này.</p><code id="mfaSecret" class="mfa-secret"></code>
+<label for="mfaEnrollCode" class="mfa-field">Mã 6 chữ số<input id="mfaEnrollCode" inputmode="numeric" autocomplete="one-time-code" maxlength="6" pattern="[0-9]{6}" placeholder="000000"></label>
+<div class="profile-actions"><button id="mfaEnable" class="btn btn-primary" type="button">Xác minh & kích hoạt</button><button id="mfaCancel" class="btn btn-ghost" type="button">Hủy thiết lập</button></div>
+</div><p id="mfaMessage" class="profile-message" role="status"></p>
+</section>
+<section class="profile-panel profile-panel-wide"><h2>Lịch sử đăng nhập</h2><p>Hiển thị tối đa 25 lượt đăng nhập gần nhất đã được web ghi nhận.</p><div id="loginHistory" class="profile-history"><p class="profile-note">Đang tải lịch sử đăng nhập...</p></div></section>
+<section id="profileAdmin" class="profile-panel profile-panel-wide" data-admin-only hidden>
+<h2>Quản trị ExamLab</h2><div class="profile-actions"><a class="btn btn-primary" href="admin.html">Quản lý đề</a><a class="btn btn-ghost" href="admin-docs.html">Duyệt tài liệu</a></div>
+<h3>Thông báo toàn hệ thống</h3><form id="announcementForm" class="profile-form"><label for="announcementInput">Nội dung thông báo</label><textarea id="announcementInput" maxlength="2000" rows="4" required></textarea><button class="btn btn-primary" type="submit">Cập nhật thông báo</button></form><p id="announcementStatus" role="status"></p>
+</section>
+</div>
+</main>
+<footer class="footer">EXAMLAB · KHOA BẢNG</footer>
+<script src="js/examlab-dialogs-v14.js?v=14.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-config.js"></script>
+<script src="js/supabase-client.js?v=8"></script>
+<script src="js/profile.js?v=36"></script>
+<script src="js/calculator-v22.js?v=27"></script>
+<script src="js/admin-auth.js?v=27"></script>
+<script src="js/role-visibility.js?v=27"></script>
+<script src="js/site-unified-v27.js?v=28"></script>
+<script src="js/header-account.js?v=35"></script>
+<script src="js/theme-v28.js?v=49.1"></script>
+<script src="js/festivals-v32.js?v=32"></script>
+<script src="js/festivals-v33.js?v=38"></script>
+<script src="js/festival-effects-v38.js?v=38"></script>
+<script src="js/festival-decor-v37.js?v=39"></script>
+<script src="js/festival-corners-v39.js?v=39"></script>
+<script src="js/theme-catalog-v49.js?v=49.1"></script>
+<script src="js/theme-store-v49.js?v=49.1"></script>
+</body>
+</html>

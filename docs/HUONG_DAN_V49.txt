@@ -1,0 +1,53 @@
+LƯU Ý: Đây là tài liệu lịch sử của bản vá V49. Đối với V49.1 Clean Full Source, đọc README_V49_1_CLEAN.md ở thư mục gốc; không áp dụng lại các bước bản vá cũ.
+
+EXAMLAB V49 — KHO 20 CHỦ ĐỀ
+================================
+BẢN VÁ TÍCH LŨY, dành cho source ExamLab-Main V41 trở lên.
+Không phải full source độc lập: giữ nguyên các file app.js, Supabase, dữ liệu, tài khoản, đề thi, nhạc và APK hiện có.
+
+1. CÀI ĐẶT
+- Sao lưu repo hoặc tạo nhánh dự phòng. Giải nén ZIP vào thư mục gốc repo ExamLab-Main, gộp thư mục css/, js/, assets/, docs/ và ghi đè file trùng. KHÔNG xóa các file cũ khác.
+- Vì có nhiều ảnh SVG, nên dùng GitHub Desktop hoặc git thay vì tải từng file qua trình duyệt. GitHub Desktop: mở repo local > chép các file vào repo > Commit > Push origin. Netlify tự deploy nếu đang cấu hình auto deploy.
+- Sau khi deploy, tải lại trang (Ctrl+F5 trên PC). APK/WebView cũ: đóng mở lại, tải lại web; nếu CSS vẫn cũ thì xóa cache WebView, không xóa dữ liệu tài khoản.
+- Các trang khác đã dùng js/theme-v28.js và css/festival-corners-v39.css chung. V49 thay hai module dùng chung để nạp kho giao diện trên mọi trang. Trang index đã đổi query cache v=49. Nếu tab cũ vẫn giữ cache, đổi tham số theme-v28.js?v=28 thành ?v=49 và festival-corners-v39.css?v=39 thành ?v=49 trong HTML của tab đó (hoặc tải lại không dùng cache).
+
+2. CÁCH DÙNG
+- Bấm Kho giao diện (20) dưới header. Chọn nhóm hoặc tìm bằng tên, có thể tìm không dấu.
+- Bấm Sáng/Tối để xem trước ảnh, chọn chủ đề, bấm Áp dụng. Nút trái tim thêm/bỏ yêu thích.
+- Theo giao diện chung sẽ bỏ lựa chọn cá nhân, trở lại cài đặt lễ hội của Admin.
+- Hiệu ứng động có thể tắt, không chạy ở phòng thi hoặc khi thiết bị yêu cầu giảm chuyển động.
+- Các chủ đề cá nhân không thay đổi cấu hình nhạc nền chung, không thay đổi theme của thành viên khác. Admin vẫn dùng cơ chế cũ để chọn 7 chủ đề chung; các chủ đề mới là lựa chọn cá nhân. Xem thử giao diện chung của admin tạm ngừng lớp cá nhân.
+
+3. ĐỒNG BỘ TÀI KHOẢN (TÙY CHỌN)
+- Mặc định: lưu trên localStorage, tách theo user ID (khách có lựa chọn riêng). Không cần SQL để dùng 20 chủ đề.
+- Muốn đồng bộ lựa chọn/yêu thích/sáng-tối/hiệu ứng giữa các thiết bị cùng tài khoản: chạy docs/SETUP_THEME_PREFERENCES_V49.sql một lần trong SQL Editor của project Supabase đang dùng. Bảng riêng, RLS chỉ cho chủ sở hữu đọc/ghi. Không cần service_role key trên web.
+- Khi chưa chạy SQL hoặc mạng lỗi, kho giao diện vẫn hoạt động với dữ liệu cục bộ. Mở lại web hoặc đăng nhập lại để kết nối lại. Không thay bảng đề thi/tài khoản cũ.
+
+4. KIỂM THỬ
+- 2.600 tổ hợp: 20 theme x 2 mode x 5 kích thước (1440,1024,768,390,320) x 13 màn hình/trạng thái; kiểm tra tràn ngang, control, ảnh đúng tab và card, nền câu hỏi.
+- 40 lựa chọn theme/mode qua nút Áp dụng; tìm không dấu, lọc nhóm, yêu thích, tắt hiệu ứng, trở về chung; lưu và mở lại bằng storage giả lập; kiểm tra tách tài khoản và đồng bộ bằng mock Supabase.
+- 1.040 SVG mới đã parse XML, kiểm tra toàn bộ URL ảnh nội bộ trong CSS.
+- Phạm vi: Chromium chạy fixture tái tạo DOM của V48 với dữ liệu mẫu; CSS và JS thực tế, ảnh nội bộ nạp trực tiếp để tránh môi trường chặn URL. Không kiểm thử live Supabase, RLS thực tế, Netlify hay APK.
+- Report: docs/TEST_V49.json.
+
+5. 20 CHỦ ĐỀ
+- Khoa bảng: Thư các cổ kính, giấy sách và màu nâu ấm.
+- Giáng sinh: Cây thông, đèn ấm và tuyết rơi.
+- Tết: Mai vàng và đèn lồng ngày xuân.
+- Trung thu: Trăng tròn và lồng đèn.
+- Halloween: Bí ngô đặt trên bàn, dơi và mạng nhện.
+- Đêm sao: Bầu trời sao và ánh trăng.
+- Anh đào: Cánh hoa hồng, thư phòng mùa xuân.
+- Mưa đêm: Mưa rơi bên khung cửa, ánh đèn đọc sách.
+- Rừng xanh: Thư viện giữa tán cây, ánh nắng qua lá.
+- Mùa thu: Lá phong, lối đi vàng và nắng ấm.
+- Đại dương: Ánh nước, san hô và đàn cá bên ô kính.
+- Hoàng hôn: Mặt trời lặn sau chân trời cam tím.
+- Cyberpunk: Thành phố neon, cửa sổ kính và bảng điện tử.
+- Tiên hiệp: Mây qua núi tiên, thư các và mái đình.
+- Học viện phép thuật: Thư viện vòm cao, nến và tinh thể phát sáng.
+- Pastel Cute: Mây mềm, nhà nhỏ và gam hồng tím dịu.
+- Mùa đông: Cabin ấm áp, rừng tuyết và núi trắng.
+- Sa mạc cổ đại: Đền đá, kim tự tháp và đồi cát vàng.
+- Hắc kim: Kiến trúc đen vàng, đèn chùm và thư viện sang trọng.
+- Vũ trụ: Trạm không gian nhìn ra hành tinh và tinh vân.

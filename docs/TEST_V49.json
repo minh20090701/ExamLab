@@ -1,0 +1,25 @@
+{
+  "scope": "Chromium fixture with actual store logic (local URL & storage shims), production CSS and image bytes. No live Supabase, APK or deployment test.",
+  "total": 2600,
+  "passed": 2600,
+  "failures": [],
+  "pageErrors": [],
+  "interactions": [
+    "20 cards and all 40 theme/mode combinations via actual apply button",
+    "accentless search",
+    "favorites",
+    "storage persistence across new fixture instance",
+    "light/dark",
+    "effects toggle",
+    "return to shared",
+    "mobile gallery",
+    "category and note controls on fixture",
+    "exam hides store",
+    "mocked Supabase sync and account separation"
+  ],
+  "additional_checks": [
+    "mobile gallery Sáng/Tối buttons horizontal, no dialog overflow",
+    "admin preview suspends and restores personal theme",
+    "1040 new SVG parsed, all packaged CSS asset URLs verified"
+  ]
+}

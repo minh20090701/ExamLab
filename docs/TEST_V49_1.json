@@ -1,0 +1,1877 @@
+{
+  "base_recheck": {
+    "layout_passed": 2600,
+    "layout_failed": 0,
+    "zip_svg_valid": 1704,
+    "internal_image_paths_found": 1712
+  },
+  "contrast": {
+    "pairs": 280,
+    "before_below_4_5": 20,
+    "after_below_4_5": 0,
+    "minimum": 4.5535,
+    "changes": [
+      {
+        "theme": "christmas",
+        "mode": "light",
+        "old": "#52756a",
+        "new": "#48675e",
+        "minimum_before": 3.754,
+        "minimum_after": 4.57
+      },
+      {
+        "theme": "christmas",
+        "mode": "dark",
+        "old": "#b9d4c2",
+        "new": "#e9f2ec",
+        "minimum_before": 3.289,
+        "minimum_after": 4.558
+      },
+      {
+        "theme": "tet",
+        "mode": "light",
+        "old": "#9b6d4d",
+        "new": "#815b40",
+        "minimum_before": 3.403,
+        "minimum_after": 4.554
+      },
+      {
+        "theme": "midautumn",
+        "mode": "light",
+        "old": "#716489",
+        "new": "#6b5e81",
+        "minimum_before": 4.184,
+        "minimum_after": 4.589
+      },
+      {
+        "theme": "halloween",
+        "mode": "light",
+        "old": "#775b75",
+        "new": "#6d536b",
+        "minimum_before": 4.01,
+        "minimum_after": 4.576
+      },
+      {
+        "theme": "halloween",
+        "mode": "dark",
+        "old": "#c9b3ca",
+        "new": "#cdb9ce",
+        "minimum_before": 4.314,
+        "minimum_after": 4.571
+      },
+      {
+        "theme": "night",
+        "mode": "light",
+        "old": "#5b6c91",
+        "new": "#556588",
+        "minimum_before": 4.115,
+        "minimum_after": 4.567
+      },
+      {
+        "theme": "night",
+        "mode": "dark",
+        "old": "#b4c8e7",
+        "new": "#e7eef7",
+        "minimum_before": 3.131,
+        "minimum_after": 4.553
+      },
+      {
+        "theme": "rain",
+        "mode": "light",
+        "old": "#526a76",
+        "new": "#516874",
+        "minimum_before": 4.448,
+        "minimum_after": 4.572
+      },
+      {
+        "theme": "autumn",
+        "mode": "light",
+        "old": "#81634c",
+        "new": "#795d48",
+        "minimum_before": 4.148,
+        "minimum_after": 4.567
+      },
+      {
+        "theme": "ocean",
+        "mode": "light",
+        "old": "#466d7c",
+        "new": "#446a79",
+        "minimum_before": 4.41,
+        "minimum_after": 4.601
+      },
+      {
+        "theme": "sunset",
+        "mode": "light",
+        "old": "#85616a",
+        "new": "#7d5b64",
+        "minimum_before": 4.141,
+        "minimum_after": 4.564
+      },
+      {
+        "theme": "cultivation",
+        "mode": "light",
+        "old": "#526f61",
+        "new": "#4f6b5e",
+        "minimum_before": 4.344,
+        "minimum_after": 4.595
+      },
+      {
+        "theme": "magic",
+        "mode": "light",
+        "old": "#705d86",
+        "new": "#6b587f",
+        "minimum_before": 4.237,
+        "minimum_after": 4.582
+      },
+      {
+        "theme": "cute",
+        "mode": "light",
+        "old": "#805f7f",
+        "new": "#7c5c7b",
+        "minimum_before": 4.349,
+        "minimum_after": 4.571
+      },
+      {
+        "theme": "winter",
+        "mode": "light",
+        "old": "#526e83",
+        "new": "#516c81",
+        "minimum_before": 4.459,
+        "minimum_after": 4.582
+      },
+      {
+        "theme": "desert",
+        "mode": "light",
+        "old": "#7d6747",
+        "new": "#786344",
+        "minimum_before": 4.28,
+        "minimum_after": 4.556
+      },
+      {
+        "theme": "desert",
+        "mode": "dark",
+        "old": "#ddc6a0",
+        "new": "#dfc9a4",
+        "minimum_before": 4.431,
+        "minimum_after": 4.56
+      },
+      {
+        "theme": "space",
+        "mode": "light",
+        "old": "#596b93",
+        "new": "#54658b",
+        "minimum_before": 4.195,
+        "minimum_after": 4.587
+      }
+    ],
+    "pairs_detail": [
+      {
+        "theme": "classic",
+        "mode": "light",
+        "pair": "season-ink/season-paper",
+        "ratio": 11.2253
+      },
+      {
+        "theme": "classic",
+        "mode": "light",
+        "pair": "season-muted/season-paper",
+        "ratio": 5.8808
+      },
+      {
+        "theme": "classic",
+        "mode": "light",
+        "pair": "season-accent/season-paper",
+        "ratio": 5.4059
+      },
+      {
+        "theme": "classic",
+        "mode": "light",
+        "pair": "season-on/season-accent",
+        "ratio": 5.4059
+      },
+      {
+        "theme": "classic",
+        "mode": "light",
+        "pair": "v49-header-ink/season-head",
+        "ratio": 8.8864
+      },
+      {
+        "theme": "classic",
+        "mode": "light",
+        "pair": "season-ink/season-soft2",
+        "ratio": 9.2188
+      },
+      {
+        "theme": "classic",
+        "mode": "light",
+        "pair": "season-muted/season-soft2",
+        "ratio": 4.8296
+      },
+      {
+        "theme": "classic",
+        "mode": "dark",
+        "pair": "season-ink/season-paper",
+        "ratio": 11.7692
+      },
+      {
+        "theme": "classic",
+        "mode": "dark",
+        "pair": "season-muted/season-paper",
+        "ratio": 7.3149
+      },
+      {
+        "theme": "classic",
+        "mode": "dark",
+        "pair": "season-accent/season-paper",
+        "ratio": 8.1556
+      },
+      {
+        "theme": "classic",
+        "mode": "dark",
+        "pair": "season-on/season-accent",
+        "ratio": 9.6716
+      },
+      {
+        "theme": "classic",
+        "mode": "dark",
+        "pair": "v49-header-ink/season-head",
+        "ratio": 10.1762
+      },
+      {
+        "theme": "classic",
+        "mode": "dark",
+        "pair": "season-ink/season-soft2",
+        "ratio": 8.0305
+      },
+      {
+        "theme": "classic",
+        "mode": "dark",
+        "pair": "season-muted/season-soft2",
+        "ratio": 4.9912
+      },
+      {
+        "theme": "christmas",
+        "mode": "light",
+        "pair": "season-ink/season-paper",
+        "ratio": 9.5179
+      },
+      {
+        "theme": "christmas",
+        "mode": "light",
+        "pair": "season-muted/season-paper",
+        "ratio": 6.0723
+      },
+      {
+        "theme": "christmas",
+        "mode": "light",
+        "pair": "season-accent/season-paper",
+        "ratio": 5.0699
+      },
+      {
+        "theme": "christmas",
+        "mode": "light",
+        "pair": "season-on/season-accent",
+        "ratio": 5.0699
+      },
+      {
+        "theme": "christmas",
+        "mode": "light",
+        "pair": "v49-header-ink/season-head",
+        "ratio": 8.3781
+      },
+      {
+        "theme": "christmas",
+        "mode": "light",
+        "pair": "season-ink/season-soft2",
+        "ratio": 7.1632
+      },
+      {
+        "theme": "christmas",
+        "mode": "light",
+        "pair": "season-muted/season-soft2",
+        "ratio": 4.57
+      },
+      {
+        "theme": "christmas",
+        "mode": "dark",
+        "pair": "season-ink/season-paper",
+        "ratio": 10.9246
+      },
+      {
+        "theme": "christmas",
+        "mode": "dark",
+        "pair": "season-muted/season-paper",
+        "ratio": 10.7201
+      },
+      {
+        "theme": "christmas",
+        "mode": "dark",
+        "pair": "season-accent/season-paper",
+        "ratio": 7.4188
+      },
+      {
+        "theme": "christmas",
+        "mode": "dark",
+        "pair": "season-on/season-accent",
+        "ratio": 9.1589
+      },
+      {
+        "theme": "christmas",
+        "mode": "dark",
+        "pair": "v49-header-ink/season-head",
+        "ratio": 9.5487
+      },
+      {
+        "theme": "christmas",
+        "mode": "dark",
+        "pair": "season-ink/season-soft2",
+        "ratio": 4.6454
+      },
+      {
+        "theme": "christmas",
+        "mode": "dark",
+        "pair": "season-muted/season-soft2",
+        "ratio": 4.5584
+      },
+      {
+        "theme": "tet",
+        "mode": "light",
+        "pair": "season-ink/season-paper",
+        "ratio": 9.6915
+      },
+      {
+        "theme": "tet",
+        "mode": "light",
+        "pair": "season-muted/season-paper",
+        "ratio": 5.7151
+      },
+      {
+        "theme": "tet",
+        "mode": "light",
+        "pair": "season-accent/season-paper",
+        "ratio": 5.4871
+      },
+      {
+        "theme": "tet",
+        "mode": "light",
+        "pair": "season-on/season-accent",
+        "ratio": 5.4871
+      },
+      {
+        "theme": "tet",
+        "mode": "light",
+        "pair": "v49-header-ink/season-head",
+        "ratio": 8.1015
+      },
+      {
+        "theme": "tet",
+        "mode": "light",
+        "pair": "season-ink/season-soft2",
+        "ratio": 7.7218
+      },
+      {
+        "theme": "tet",
+        "mode": "light",
+        "pair": "season-muted/season-soft2",
+        "ratio": 4.5535
+      },
+      {
+        "theme": "tet",
+        "mode": "dark",
+        "pair": "season-ink/season-paper",
+        "ratio": 11.6336
+      },
+      {
+        "theme": "tet",
+        "mode": "dark",
+        "pair": "season-muted/season-paper",
+        "ratio": 7.3712
+      },
+      {
+        "theme": "tet",
+        "mode": "dark",
+        "pair": "season-accent/season-paper",
+        "ratio": 9.2052
+      },
+      {
+        "theme": "tet",
+        "mode": "dark",
+        "pair": "season-on/season-accent",
+        "ratio": 11.0949
+      },
+      {
+        "theme": "tet",
+        "mode": "dark",
+        "pair": "v49-header-ink/season-head",
+        "ratio": 10.0415
+      },
+      {
+        "theme": "tet",
+        "mode": "dark",
+        "pair": "season-ink/season-soft2",
+        "ratio": 7.3671
+      },
+      {
+        "theme": "tet",
+        "mode": "dark",
+        "pair": "season-muted/season-soft2",
+        "ratio": 4.6679
+      },
+      {
+        "theme": "midautumn",
+        "mode": "light",
+        "pair": "season-ink/season-paper",
+        "ratio": 10.324
+      },
+      {
+        "theme": "midautumn",
+        "mode": "light",
+        "pair": "season-muted/season-paper",
+        "ratio": 5.749
+      },
+      {
+        "theme": "midautumn",
+        "mode": "light",
+        "pair": "season-accent/season-paper",
+        "ratio": 5.608
+      },
+      {
+        "theme": "midautumn",
+        "mode": "light",
+        "pair": "season-on/season-accent",
+        "ratio": 5.608
+      },
+      {
+        "theme": "midautumn",
+        "mode": "light",
+        "pair": "v49-header-ink/season-head",
+        "ratio": 8.279
+      },
+      {
+        "theme": "midautumn",
+        "mode": "light",
+        "pair": "season-ink/season-soft2",
+        "ratio": 8.2417
+      },
+      {
+        "theme": "midautumn",
+        "mode": "light",
+        "pair": "season-muted/season-soft2",
+        "ratio": 4.5895
+      },
+      {
+        "theme": "midautumn",
+        "mode": "dark",
+        "pair": "season-ink/season-paper",
+        "ratio": 12.3829
+      },
+      {
+        "theme": "midautumn",
+        "mode": "dark",
+        "pair": "season-muted/season-paper",
+        "ratio": 8.2639
+      },
+      {
+        "theme": "midautumn",
+        "mode": "dark",
+        "pair": "season-accent/season-paper",
+        "ratio": 10.1443
+      },
+      {
+        "theme": "midautumn",
+        "mode": "dark",
+        "pair": "season-on/season-accent",
+        "ratio": 11.9812
+      },
+      {
+        "theme": "midautumn",
+        "mode": "dark",
+        "pair": "v49-header-ink/season-head",
+        "ratio": 10.6133
+      },
+      {
+        "theme": "midautumn",
+        "mode": "dark",
+        "pair": "season-ink/season-soft2",
+        "ratio": 6.834
+      },
+      {
+        "theme": "midautumn",
+        "mode": "dark",
+        "pair": "season-muted/season-soft2",
+        "ratio": 4.5608
+      },
+      {
+        "theme": "halloween",
+        "mode": "light",
+        "pair": "season-ink/season-paper",
+        "ratio": 11.5815
+      },
+      {
+        "theme": "halloween",
+        "mode": "light",
+        "pair": "season-muted/season-paper",
+        "ratio": 6.5478
+      },
+      {
+        "theme": "halloween",
+        "mode": "light",
+        "pair": "season-accent/season-paper",
+        "ratio": 4.7763
+      },
+      {
+        "theme": "halloween",
+        "mode": "light",
+        "pair": "season-on/season-accent",
+        "ratio": 4.7763
+      },
+      {
+        "theme": "halloween",
+        "mode": "light",
+        "pair": "v49-header-ink/season-head",
+        "ratio": 9.8414
+      },
+      {
+        "theme": "halloween",
+        "mode": "light",
+        "pair": "season-ink/season-soft2",
+        "ratio": 8.0936
+      },
+      {
+        "theme": "halloween",
+        "mode": "light",
+        "pair": "season-muted/season-soft2",
+        "ratio": 4.5758
+      },
+      {
+        "theme": "halloween",
+        "mode": "dark",
+        "pair": "season-ink/season-paper",
+        "ratio": 12.358
+      },
+      {
+        "theme": "halloween",
+        "mode": "dark",
+        "pair": "season-muted/season-paper",
+        "ratio": 7.9592
+      },
+      {
+        "theme": "halloween",
+        "mode": "dark",
+        "pair": "season-accent/season-paper",
+        "ratio": 8.416
+      },
+      {
+        "theme": "halloween",
+        "mode": "dark",
+        "pair": "season-on/season-accent",
+        "ratio": 10.0117
+      },
+      {
+        "theme": "halloween",
+        "mode": "dark",
+        "pair": "v49-header-ink/season-head",
+        "ratio": 10.7214
+      },
+      {
+        "theme": "halloween",
+        "mode": "dark",
+        "pair": "season-ink/season-soft2",
+        "ratio": 7.097
+      },
+      {
+        "theme": "halloween",
+        "mode": "dark",
+        "pair": "season-muted/season-soft2",
+        "ratio": 4.5709
+      },
+      {
+        "theme": "night",
+        "mode": "light",
+        "pair": "season-ink/season-paper",
+        "ratio": 11.2375
+      },
+      {
+        "theme": "night",
+        "mode": "light",
+        "pair": "season-muted/season-paper",
+        "ratio": 5.681
+      },
+      {
+        "theme": "night",
+        "mode": "light",
+        "pair": "season-accent/season-paper",
+        "ratio": 4.9728
+      },
+      {
+        "theme": "night",
+        "mode": "light",
+        "pair": "season-on/season-accent",
+        "ratio": 4.9728
+      },
+      {
+        "theme": "night",
+        "mode": "light",
+        "pair": "v49-header-ink/season-head",
+        "ratio": 8.7714
+      },
+      {
+        "theme": "night",
+        "mode": "light",
+        "pair": "season-ink/season-soft2",
+        "ratio": 9.0336
+      },
+      {
+        "theme": "night",
+        "mode": "light",
+        "pair": "season-muted/season-soft2",
+        "ratio": 4.5669
+      },
+      {
+        "theme": "night",
+        "mode": "dark",
+        "pair": "season-ink/season-paper",
+        "ratio": 12.9958
+      },
+      {
+        "theme": "night",
+        "mode": "dark",
+        "pair": "season-muted/season-paper",
+        "ratio": 12.4585
+      },
+      {
+        "theme": "night",
+        "mode": "dark",
+        "pair": "season-accent/season-paper",
+        "ratio": 9.0639
+      },
+      {
+        "theme": "night",
+        "mode": "dark",
+        "pair": "season-on/season-accent",
+        "ratio": 10.8367
+      },
+      {
+        "theme": "night",
+        "mode": "dark",
+        "pair": "v49-header-ink/season-head",
+        "ratio": 11.1756
+      },
+      {
+        "theme": "night",
+        "mode": "dark",
+        "pair": "season-ink/season-soft2",
+        "ratio": 4.7499
+      },
+      {
+        "theme": "night",
+        "mode": "dark",
+        "pair": "season-muted/season-soft2",
+        "ratio": 4.5535
+      },
+      {
+        "theme": "sakura",
+        "mode": "light",
+        "pair": "season-ink/season-paper",
+        "ratio": 11.0694
+      },
+      {
+        "theme": "sakura",
+        "mode": "light",
+        "pair": "season-muted/season-paper",
+        "ratio": 6.1497
+      },
+      {
+        "theme": "sakura",
+        "mode": "light",
+        "pair": "season-accent/season-paper",
+        "ratio": 6.0511
+      },
+      {
+        "theme": "sakura",
+        "mode": "light",
+        "pair": "season-on/season-accent",
+        "ratio": 6.0511
+      },
+      {
+        "theme": "sakura",
+        "mode": "light",
+        "pair": "v49-header-ink/season-head",
+        "ratio": 8.4272
+      },
+      {
+        "theme": "sakura",
+        "mode": "light",
+        "pair": "season-ink/season-soft2",
+        "ratio": 8.4191
+      },
+      {
+        "theme": "sakura",
+        "mode": "light",
+        "pair": "season-muted/season-soft2",
+        "ratio": 4.6773
+      },
+      {
+        "theme": "sakura",
+        "mode": "dark",
+        "pair": "season-ink/season-paper",
+        "ratio": 12.9668
+      },
+      {
+        "theme": "sakura",
+        "mode": "dark",
+        "pair": "season-muted/season-paper",
+        "ratio": 8.2633
+      },
+      {
+        "theme": "sakura",
+        "mode": "dark",
+        "pair": "season-accent/season-paper",
+        "ratio": 8.7551
+      },
+      {
+        "theme": "sakura",
+        "mode": "dark",
+        "pair": "season-on/season-accent",
+        "ratio": 10.3161
+      },
+      {
+        "theme": "sakura",
+        "mode": "dark",
+        "pair": "v49-header-ink/season-head",
+        "ratio": 11.0166
+      },
+      {
+        "theme": "sakura",
+        "mode": "dark",
+        "pair": "season-ink/season-soft2",
+        "ratio": 7.6069
+      },
+      {
+        "theme": "sakura",
+        "mode": "dark",
+        "pair": "season-muted/season-soft2",
+        "ratio": 4.8477
+      },
+      {
+        "theme": "rain",
+        "mode": "light",
+        "pair": "season-ink/season-paper",
+        "ratio": 11.4596
+      },
+      {
+        "theme": "rain",
+        "mode": "light",
+        "pair": "season-muted/season-paper",
+        "ratio": 5.6414
+      },
+      {
+        "theme": "rain",
+        "mode": "light",
+        "pair": "season-accent/season-paper",
+        "ratio": 6.1866
+      },
+      {
+        "theme": "rain",
+        "mode": "light",
+        "pair": "season-on/season-accent",
+        "ratio": 6.1866
+      },
+      {
+        "theme": "rain",
+        "mode": "light",
+        "pair": "v49-header-ink/season-head",
+        "ratio": 9.4053
+      },
+      {
+        "theme": "rain",
+        "mode": "light",
+        "pair": "season-ink/season-soft2",
+        "ratio": 9.2872
+      },
+      {
+        "theme": "rain",
+        "mode": "light",
+        "pair": "season-muted/season-soft2",
+        "ratio": 4.572
+      },
+      {
+        "theme": "rain",
+        "mode": "dark",
+        "pair": "season-ink/season-paper",
+        "ratio": 12.1802
+      },
+      {
+        "theme": "rain",
+        "mode": "dark",
+        "pair": "season-muted/season-paper",
+        "ratio": 8.0828
+      },
+      {
+        "theme": "rain",
+        "mode": "dark",
+        "pair": "season-accent/season-paper",
+        "ratio": 8.1953
+      },
+      {
+        "theme": "rain",
+        "mode": "dark",
+        "pair": "season-on/season-accent",
+        "ratio": 9.8646
+      },
+      {
+        "theme": "rain",
+        "mode": "dark",
+        "pair": "v49-header-ink/season-head",
+        "ratio": 10.4636
+      },
+      {
+        "theme": "rain",
+        "mode": "dark",
+        "pair": "season-ink/season-soft2",
+        "ratio": 8.3929
+      },
+      {
+        "theme": "rain",
+        "mode": "dark",
+        "pair": "season-muted/season-soft2",
+        "ratio": 5.5696
+      },
+      {
+        "theme": "forest",
+        "mode": "light",
+        "pair": "season-ink/season-paper",
+        "ratio": 11.1781
+      },
+      {
+        "theme": "forest",
+        "mode": "light",
+        "pair": "season-muted/season-paper",
+        "ratio": 5.6404
+      },
+      {
+        "theme": "forest",
+        "mode": "light",
+        "pair": "season-accent/season-paper",
+        "ratio": 6.2478
+      },
+      {
+        "theme": "forest",
+        "mode": "light",
+        "pair": "season-on/season-accent",
+        "ratio": 6.2478
+      },
+      {
+        "theme": "forest",
+        "mode": "light",
+        "pair": "v49-header-ink/season-head",
+        "ratio": 9.5527
+      },
+      {
+        "theme": "forest",
+        "mode": "light",
+        "pair": "season-ink/season-soft2",
+        "ratio": 9.1435
+      },
+      {
+        "theme": "forest",
+        "mode": "light",
+        "pair": "season-muted/season-soft2",
+        "ratio": 4.6138
+      },
+      {
+        "theme": "forest",
+        "mode": "dark",
+        "pair": "season-ink/season-paper",
+        "ratio": 11.401
+      },
+      {
+        "theme": "forest",
+        "mode": "dark",
+        "pair": "season-muted/season-paper",
+        "ratio": 7.7233
+      },
+      {
+        "theme": "forest",
+        "mode": "dark",
+        "pair": "season-accent/season-paper",
+        "ratio": 8.6573
+      },
+      {
+        "theme": "forest",
+        "mode": "dark",
+        "pair": "season-on/season-accent",
+        "ratio": 10.7534
+      },
+      {
+        "theme": "forest",
+        "mode": "dark",
+        "pair": "v49-header-ink/season-head",
+        "ratio": 9.9751
+      },
+      {
+        "theme": "forest",
+        "mode": "dark",
+        "pair": "season-ink/season-soft2",
+        "ratio": 7.4349
+      },
+      {
+        "theme": "forest",
+        "mode": "dark",
+        "pair": "season-muted/season-soft2",
+        "ratio": 5.0366
+      },
+      {
+        "theme": "autumn",
+        "mode": "light",
+        "pair": "season-ink/season-paper",
+        "ratio": 9.7294
+      },
+      {
+        "theme": "autumn",
+        "mode": "light",
+        "pair": "season-muted/season-paper",
+        "ratio": 5.7739
+      },
+      {
+        "theme": "autumn",
+        "mode": "light",
+        "pair": "season-accent/season-paper",
+        "ratio": 5.3184
+      },
+      {
+        "theme": "autumn",
+        "mode": "light",
+        "pair": "season-on/season-accent",
+        "ratio": 5.3184
+      },
+      {
+        "theme": "autumn",
+        "mode": "light",
+        "pair": "v49-header-ink/season-head",
+        "ratio": 8.0473
+      },
+      {
+        "theme": "autumn",
+        "mode": "light",
+        "pair": "season-ink/season-soft2",
+        "ratio": 7.6949
+      },
+      {
+        "theme": "autumn",
+        "mode": "light",
+        "pair": "season-muted/season-soft2",
+        "ratio": 4.5665
+      },
+      {
+        "theme": "autumn",
+        "mode": "dark",
+        "pair": "season-ink/season-paper",
+        "ratio": 11.5716
+      },
+      {
+        "theme": "autumn",
+        "mode": "dark",
+        "pair": "season-muted/season-paper",
+        "ratio": 7.4627
+      },
+      {
+        "theme": "autumn",
+        "mode": "dark",
+        "pair": "season-accent/season-paper",
+        "ratio": 8.3567
+      },
+      {
+        "theme": "autumn",
+        "mode": "dark",
+        "pair": "season-on/season-accent",
+        "ratio": 9.8234
+      },
+      {
+        "theme": "autumn",
+        "mode": "dark",
+        "pair": "v49-header-ink/season-head",
+        "ratio": 9.6939
+      },
+      {
+        "theme": "autumn",
+        "mode": "dark",
+        "pair": "season-ink/season-soft2",
+        "ratio": 7.7501
+      },
+      {
+        "theme": "autumn",
+        "mode": "dark",
+        "pair": "season-muted/season-soft2",
+        "ratio": 4.9981
+      },
+      {
+        "theme": "ocean",
+        "mode": "light",
+        "pair": "season-ink/season-paper",
+        "ratio": 10.9899
+      },
+      {
+        "theme": "ocean",
+        "mode": "light",
+        "pair": "season-muted/season-paper",
+        "ratio": 5.6612
+      },
+      {
+        "theme": "ocean",
+        "mode": "light",
+        "pair": "season-accent/season-paper",
+        "ratio": 4.7086
+      },
+      {
+        "theme": "ocean",
+        "mode": "light",
+        "pair": "season-on/season-accent",
+        "ratio": 4.7086
+      },
+      {
+        "theme": "ocean",
+        "mode": "light",
+        "pair": "v49-header-ink/season-head",
+        "ratio": 8.696
+      },
+      {
+        "theme": "ocean",
+        "mode": "light",
+        "pair": "season-ink/season-soft2",
+        "ratio": 8.9316
+      },
+      {
+        "theme": "ocean",
+        "mode": "light",
+        "pair": "season-muted/season-soft2",
+        "ratio": 4.6009
+      },
+      {
+        "theme": "ocean",
+        "mode": "dark",
+        "pair": "season-ink/season-paper",
+        "ratio": 10.4217
+      },
+      {
+        "theme": "ocean",
+        "mode": "dark",
+        "pair": "season-muted/season-paper",
+        "ratio": 6.8874
+      },
+      {
+        "theme": "ocean",
+        "mode": "dark",
+        "pair": "season-accent/season-paper",
+        "ratio": 7.6505
+      },
+      {
+        "theme": "ocean",
+        "mode": "dark",
+        "pair": "season-on/season-accent",
+        "ratio": 10.2154
+      },
+      {
+        "theme": "ocean",
+        "mode": "dark",
+        "pair": "v49-header-ink/season-head",
+        "ratio": 9.8281
+      },
+      {
+        "theme": "ocean",
+        "mode": "dark",
+        "pair": "season-ink/season-soft2",
+        "ratio": 7.1362
+      },
+      {
+        "theme": "ocean",
+        "mode": "dark",
+        "pair": "season-muted/season-soft2",
+        "ratio": 4.7161
+      },
+      {
+        "theme": "sunset",
+        "mode": "light",
+        "pair": "season-ink/season-paper",
+        "ratio": 10.5497
+      },
+      {
+        "theme": "sunset",
+        "mode": "light",
+        "pair": "season-muted/season-paper",
+        "ratio": 5.6639
+      },
+      {
+        "theme": "sunset",
+        "mode": "light",
+        "pair": "season-accent/season-paper",
+        "ratio": 5.77
+      },
+      {
+        "theme": "sunset",
+        "mode": "light",
+        "pair": "season-on/season-accent",
+        "ratio": 5.77
+      },
+      {
+        "theme": "sunset",
+        "mode": "light",
+        "pair": "v49-header-ink/season-head",
+        "ratio": 8.4628
+      },
+      {
+        "theme": "sunset",
+        "mode": "light",
+        "pair": "season-ink/season-soft2",
+        "ratio": 8.5007
+      },
+      {
+        "theme": "sunset",
+        "mode": "light",
+        "pair": "season-muted/season-soft2",
+        "ratio": 4.5639
+      },
+      {
+        "theme": "sunset",
+        "mode": "dark",
+        "pair": "season-ink/season-paper",
+        "ratio": 12.0105
+      },
+      {
+        "theme": "sunset",
+        "mode": "dark",
+        "pair": "season-muted/season-paper",
+        "ratio": 7.7513
+      },
+      {
+        "theme": "sunset",
+        "mode": "dark",
+        "pair": "season-accent/season-paper",
+        "ratio": 8.5065
+      },
+      {
+        "theme": "sunset",
+        "mode": "dark",
+        "pair": "season-on/season-accent",
+        "ratio": 10.1811
+      },
+      {
+        "theme": "sunset",
+        "mode": "dark",
+        "pair": "v49-header-ink/season-head",
+        "ratio": 10.1738
+      },
+      {
+        "theme": "sunset",
+        "mode": "dark",
+        "pair": "season-ink/season-soft2",
+        "ratio": 8.1102
+      },
+      {
+        "theme": "sunset",
+        "mode": "dark",
+        "pair": "season-muted/season-soft2",
+        "ratio": 5.2341
+      },
+      {
+        "theme": "cyber",
+        "mode": "light",
+        "pair": "season-ink/season-paper",
+        "ratio": 12.4415
+      },
+      {
+        "theme": "cyber",
+        "mode": "light",
+        "pair": "season-muted/season-paper",
+        "ratio": 5.948
+      },
+      {
+        "theme": "cyber",
+        "mode": "light",
+        "pair": "season-accent/season-paper",
+        "ratio": 7.578
+      },
+      {
+        "theme": "cyber",
+        "mode": "light",
+        "pair": "season-on/season-accent",
+        "ratio": 7.578
+      },
+      {
+        "theme": "cyber",
+        "mode": "light",
+        "pair": "v49-header-ink/season-head",
+        "ratio": 10.425
+      },
+      {
+        "theme": "cyber",
+        "mode": "light",
+        "pair": "season-ink/season-soft2",
+        "ratio": 9.7618
+      },
+      {
+        "theme": "cyber",
+        "mode": "light",
+        "pair": "season-muted/season-soft2",
+        "ratio": 4.6669
+      },
+      {
+        "theme": "cyber",
+        "mode": "dark",
+        "pair": "season-ink/season-paper",
+        "ratio": 12.9217
+      },
+      {
+        "theme": "cyber",
+        "mode": "dark",
+        "pair": "season-muted/season-paper",
+        "ratio": 8.0677
+      },
+      {
+        "theme": "cyber",
+        "mode": "dark",
+        "pair": "season-accent/season-paper",
+        "ratio": 10.12
+      },
+      {
+        "theme": "cyber",
+        "mode": "dark",
+        "pair": "season-on/season-accent",
+        "ratio": 12.0102
+      },
+      {
+        "theme": "cyber",
+        "mode": "dark",
+        "pair": "v49-header-ink/season-head",
+        "ratio": 11.1494
+      },
+      {
+        "theme": "cyber",
+        "mode": "dark",
+        "pair": "season-ink/season-soft2",
+        "ratio": 8.5248
+      },
+      {
+        "theme": "cyber",
+        "mode": "dark",
+        "pair": "season-muted/season-soft2",
+        "ratio": 5.3225
+      },
+      {
+        "theme": "cultivation",
+        "mode": "light",
+        "pair": "season-ink/season-paper",
+        "ratio": 10.0354
+      },
+      {
+        "theme": "cultivation",
+        "mode": "light",
+        "pair": "season-muted/season-paper",
+        "ratio": 5.6454
+      },
+      {
+        "theme": "cultivation",
+        "mode": "light",
+        "pair": "season-accent/season-paper",
+        "ratio": 5.1662
+      },
+      {
+        "theme": "cultivation",
+        "mode": "light",
+        "pair": "season-on/season-accent",
+        "ratio": 5.1662
+      },
+      {
+        "theme": "cultivation",
+        "mode": "light",
+        "pair": "v49-header-ink/season-head",
+        "ratio": 7.97
+      },
+      {
+        "theme": "cultivation",
+        "mode": "light",
+        "pair": "season-ink/season-soft2",
+        "ratio": 8.1676
+      },
+      {
+        "theme": "cultivation",
+        "mode": "light",
+        "pair": "season-muted/season-soft2",
+        "ratio": 4.5947
+      },
+      {
+        "theme": "cultivation",
+        "mode": "dark",
+        "pair": "season-ink/season-paper",
+        "ratio": 10.5908
+      },
+      {
+        "theme": "cultivation",
+        "mode": "dark",
+        "pair": "season-muted/season-paper",
+        "ratio": 7.1571
+      },
+      {
+        "theme": "cultivation",
+        "mode": "dark",
+        "pair": "season-accent/season-paper",
+        "ratio": 8.0783
+      },
+      {
+        "theme": "cultivation",
+        "mode": "dark",
+        "pair": "season-on/season-accent",
+        "ratio": 10.5913
+      },
+      {
+        "theme": "cultivation",
+        "mode": "dark",
+        "pair": "v49-header-ink/season-head",
+        "ratio": 9.7089
+      },
+      {
+        "theme": "cultivation",
+        "mode": "dark",
+        "pair": "season-ink/season-soft2",
+        "ratio": 7.1298
+      },
+      {
+        "theme": "cultivation",
+        "mode": "dark",
+        "pair": "season-muted/season-soft2",
+        "ratio": 4.8182
+      },
+      {
+        "theme": "magic",
+        "mode": "light",
+        "pair": "season-ink/season-paper",
+        "ratio": 11.2953
+      },
+      {
+        "theme": "magic",
+        "mode": "light",
+        "pair": "season-muted/season-paper",
+        "ratio": 6.0506
+      },
+      {
+        "theme": "magic",
+        "mode": "light",
+        "pair": "season-accent/season-paper",
+        "ratio": 5.8497
+      },
+      {
+        "theme": "magic",
+        "mode": "light",
+        "pair": "season-on/season-accent",
+        "ratio": 5.8497
+      },
+      {
+        "theme": "magic",
+        "mode": "light",
+        "pair": "v49-header-ink/season-head",
+        "ratio": 9.4112
+      },
+      {
+        "theme": "magic",
+        "mode": "light",
+        "pair": "season-ink/season-soft2",
+        "ratio": 8.5546
+      },
+      {
+        "theme": "magic",
+        "mode": "light",
+        "pair": "season-muted/season-soft2",
+        "ratio": 4.5825
+      },
+      {
+        "theme": "magic",
+        "mode": "dark",
+        "pair": "season-ink/season-paper",
+        "ratio": 12.6624
+      },
+      {
+        "theme": "magic",
+        "mode": "dark",
+        "pair": "season-muted/season-paper",
+        "ratio": 8.7071
+      },
+      {
+        "theme": "magic",
+        "mode": "dark",
+        "pair": "season-accent/season-paper",
+        "ratio": 8.0038
+      },
+      {
+        "theme": "magic",
+        "mode": "dark",
+        "pair": "season-on/season-accent",
+        "ratio": 9.4645
+      },
+      {
+        "theme": "magic",
+        "mode": "dark",
+        "pair": "v49-header-ink/season-head",
+        "ratio": 10.6652
+      },
+      {
+        "theme": "magic",
+        "mode": "dark",
+        "pair": "season-ink/season-soft2",
+        "ratio": 8.7422
+      },
+      {
+        "theme": "magic",
+        "mode": "dark",
+        "pair": "season-muted/season-soft2",
+        "ratio": 6.0115
+      },
+      {
+        "theme": "cute",
+        "mode": "light",
+        "pair": "season-ink/season-paper",
+        "ratio": 9.181
+      },
+      {
+        "theme": "cute",
+        "mode": "light",
+        "pair": "season-muted/season-paper",
+        "ratio": 5.5446
+      },
+      {
+        "theme": "cute",
+        "mode": "light",
+        "pair": "season-accent/season-paper",
+        "ratio": 5.2369
+      },
+      {
+        "theme": "cute",
+        "mode": "light",
+        "pair": "season-on/season-accent",
+        "ratio": 5.2369
+      },
+      {
+        "theme": "cute",
+        "mode": "light",
+        "pair": "v49-header-ink/season-head",
+        "ratio": 6.9361
+      },
+      {
+        "theme": "cute",
+        "mode": "light",
+        "pair": "season-ink/season-soft2",
+        "ratio": 7.5686
+      },
+      {
+        "theme": "cute",
+        "mode": "light",
+        "pair": "season-muted/season-soft2",
+        "ratio": 4.5708
+      },
+      {
+        "theme": "cute",
+        "mode": "dark",
+        "pair": "season-ink/season-paper",
+        "ratio": 11.4829
+      },
+      {
+        "theme": "cute",
+        "mode": "dark",
+        "pair": "season-muted/season-paper",
+        "ratio": 7.619
+      },
+      {
+        "theme": "cute",
+        "mode": "dark",
+        "pair": "season-accent/season-paper",
+        "ratio": 7.7068
+      },
+      {
+        "theme": "cute",
+        "mode": "dark",
+        "pair": "season-on/season-accent",
+        "ratio": 9.357
+      },
+      {
+        "theme": "cute",
+        "mode": "dark",
+        "pair": "v49-header-ink/season-head",
+        "ratio": 9.7842
+      },
+      {
+        "theme": "cute",
+        "mode": "dark",
+        "pair": "season-ink/season-soft2",
+        "ratio": 7.2955
+      },
+      {
+        "theme": "cute",
+        "mode": "dark",
+        "pair": "season-muted/season-soft2",
+        "ratio": 4.8406
+      },
+      {
+        "theme": "winter",
+        "mode": "light",
+        "pair": "season-ink/season-paper",
+        "ratio": 9.3314
+      },
+      {
+        "theme": "winter",
+        "mode": "light",
+        "pair": "season-muted/season-paper",
+        "ratio": 5.4031
+      },
+      {
+        "theme": "winter",
+        "mode": "light",
+        "pair": "season-accent/season-paper",
+        "ratio": 5.1476
+      },
+      {
+        "theme": "winter",
+        "mode": "light",
+        "pair": "season-on/season-accent",
+        "ratio": 5.1476
+      },
+      {
+        "theme": "winter",
+        "mode": "light",
+        "pair": "v49-header-ink/season-head",
+        "ratio": 7.0657
+      },
+      {
+        "theme": "winter",
+        "mode": "light",
+        "pair": "season-ink/season-soft2",
+        "ratio": 7.9136
+      },
+      {
+        "theme": "winter",
+        "mode": "light",
+        "pair": "season-muted/season-soft2",
+        "ratio": 4.5821
+      },
+      {
+        "theme": "winter",
+        "mode": "dark",
+        "pair": "season-ink/season-paper",
+        "ratio": 10.7688
+      },
+      {
+        "theme": "winter",
+        "mode": "dark",
+        "pair": "season-muted/season-paper",
+        "ratio": 7.3211
+      },
+      {
+        "theme": "winter",
+        "mode": "dark",
+        "pair": "season-accent/season-paper",
+        "ratio": 7.7985
+      },
+      {
+        "theme": "winter",
+        "mode": "dark",
+        "pair": "season-on/season-accent",
+        "ratio": 9.9985
+      },
+      {
+        "theme": "winter",
+        "mode": "dark",
+        "pair": "v49-header-ink/season-head",
+        "ratio": 9.6238
+      },
+      {
+        "theme": "winter",
+        "mode": "dark",
+        "pair": "season-ink/season-soft2",
+        "ratio": 7.0603
+      },
+      {
+        "theme": "winter",
+        "mode": "dark",
+        "pair": "season-muted/season-soft2",
+        "ratio": 4.7999
+      },
+      {
+        "theme": "desert",
+        "mode": "light",
+        "pair": "season-ink/season-paper",
+        "ratio": 8.8624
+      },
+      {
+        "theme": "desert",
+        "mode": "light",
+        "pair": "season-muted/season-paper",
+        "ratio": 5.4486
+      },
+      {
+        "theme": "desert",
+        "mode": "light",
+        "pair": "season-accent/season-paper",
+        "ratio": 4.7748
+      },
+      {
+        "theme": "desert",
+        "mode": "light",
+        "pair": "season-on/season-accent",
+        "ratio": 4.7748
+      },
+      {
+        "theme": "desert",
+        "mode": "light",
+        "pair": "v49-header-ink/season-head",
+        "ratio": 6.8477
+      },
+      {
+        "theme": "desert",
+        "mode": "light",
+        "pair": "season-ink/season-soft2",
+        "ratio": 7.4106
+      },
+      {
+        "theme": "desert",
+        "mode": "light",
+        "pair": "season-muted/season-soft2",
+        "ratio": 4.556
+      },
+      {
+        "theme": "desert",
+        "mode": "dark",
+        "pair": "season-ink/season-paper",
+        "ratio": 10.8578
+      },
+      {
+        "theme": "desert",
+        "mode": "dark",
+        "pair": "season-muted/season-paper",
+        "ratio": 7.5983
+      },
+      {
+        "theme": "desert",
+        "mode": "dark",
+        "pair": "season-accent/season-paper",
+        "ratio": 8.7147
+      },
+      {
+        "theme": "desert",
+        "mode": "dark",
+        "pair": "season-on/season-accent",
+        "ratio": 10.7271
+      },
+      {
+        "theme": "desert",
+        "mode": "dark",
+        "pair": "v49-header-ink/season-head",
+        "ratio": 9.4394
+      },
+      {
+        "theme": "desert",
+        "mode": "dark",
+        "pair": "season-ink/season-soft2",
+        "ratio": 6.5156
+      },
+      {
+        "theme": "desert",
+        "mode": "dark",
+        "pair": "season-muted/season-soft2",
+        "ratio": 4.5597
+      },
+      {
+        "theme": "blackgold",
+        "mode": "light",
+        "pair": "season-ink/season-paper",
+        "ratio": 13.254
+      },
+      {
+        "theme": "blackgold",
+        "mode": "light",
+        "pair": "season-muted/season-paper",
+        "ratio": 5.8292
+      },
+      {
+        "theme": "blackgold",
+        "mode": "light",
+        "pair": "season-accent/season-paper",
+        "ratio": 6.0242
+      },
+      {
+        "theme": "blackgold",
+        "mode": "light",
+        "pair": "season-on/season-accent",
+        "ratio": 6.0242
+      },
+      {
+        "theme": "blackgold",
+        "mode": "light",
+        "pair": "v49-header-ink/season-head",
+        "ratio": 10.4213
+      },
+      {
+        "theme": "blackgold",
+        "mode": "light",
+        "pair": "season-ink/season-soft2",
+        "ratio": 10.7656
+      },
+      {
+        "theme": "blackgold",
+        "mode": "light",
+        "pair": "season-muted/season-soft2",
+        "ratio": 4.7348
+      },
+      {
+        "theme": "blackgold",
+        "mode": "dark",
+        "pair": "season-ink/season-paper",
+        "ratio": 13.9695
+      },
+      {
+        "theme": "blackgold",
+        "mode": "dark",
+        "pair": "season-muted/season-paper",
+        "ratio": 8.4025
+      },
+      {
+        "theme": "blackgold",
+        "mode": "dark",
+        "pair": "season-accent/season-paper",
+        "ratio": 10.2307
+      },
+      {
+        "theme": "blackgold",
+        "mode": "dark",
+        "pair": "season-on/season-accent",
+        "ratio": 11.9313
+      },
+      {
+        "theme": "blackgold",
+        "mode": "dark",
+        "pair": "v49-header-ink/season-head",
+        "ratio": 11.9257
+      },
+      {
+        "theme": "blackgold",
+        "mode": "dark",
+        "pair": "season-ink/season-soft2",
+        "ratio": 8.4908
+      },
+      {
+        "theme": "blackgold",
+        "mode": "dark",
+        "pair": "season-muted/season-soft2",
+        "ratio": 5.1072
+      },
+      {
+        "theme": "space",
+        "mode": "light",
+        "pair": "season-ink/season-paper",
+        "ratio": 10.2189
+      },
+      {
+        "theme": "space",
+        "mode": "light",
+        "pair": "season-muted/season-paper",
+        "ratio": 5.5686
+      },
+      {
+        "theme": "space",
+        "mode": "light",
+        "pair": "season-accent/season-paper",
+        "ratio": 5.7339
+      },
+      {
+        "theme": "space",
+        "mode": "light",
+        "pair": "season-on/season-accent",
+        "ratio": 5.7339
+      },
+      {
+        "theme": "space",
+        "mode": "light",
+        "pair": "v49-header-ink/season-head",
+        "ratio": 8.0161
+      },
+      {
+        "theme": "space",
+        "mode": "light",
+        "pair": "season-ink/season-soft2",
+        "ratio": 8.4176
+      },
+      {
+        "theme": "space",
+        "mode": "light",
+        "pair": "season-muted/season-soft2",
+        "ratio": 4.587
+      },
+      {
+        "theme": "space",
+        "mode": "dark",
+        "pair": "season-ink/season-paper",
+        "ratio": 12.9426
+      },
+      {
+        "theme": "space",
+        "mode": "dark",
+        "pair": "season-muted/season-paper",
+        "ratio": 8.5517
+      },
+      {
+        "theme": "space",
+        "mode": "dark",
+        "pair": "season-accent/season-paper",
+        "ratio": 7.802
+      },
+      {
+        "theme": "space",
+        "mode": "dark",
+        "pair": "season-on/season-accent",
+        "ratio": 9.7085
+      },
+      {
+        "theme": "space",
+        "mode": "dark",
+        "pair": "v49-header-ink/season-head",
+        "ratio": 11.7243
+      },
+      {
+        "theme": "space",
+        "mode": "dark",
+        "pair": "season-ink/season-soft2",
+        "ratio": 8.7631
+      },
+      {
+        "theme": "space",
+        "mode": "dark",
+        "pair": "season-muted/season-soft2",
+        "ratio": 5.7901
+      }
+    ]
+  },
+  "cache": {
+    "pages": 9,
+    "version": "49.1",
+    "helper": "UPDATE_CACHE_V49_1.ps1",
+    "note": "Other eight HTML pages are updated in existing repository by helper; they are not overwritten by this patch."
+  },
+  "limitations": "Local Chromium fixture, no live Netlify or Supabase/APK test.",
+  "corrected_build_recheck": {
+    "scope": "Chromium fixture with actual store logic (local URL & storage shims), production CSS and image bytes. No live Supabase, APK or deployment test.",
+    "total": 2600,
+    "passed": 2600,
+    "failures": [],
+    "pageErrors": [],
+    "interactions": [
+      "20 cards and all 40 theme/mode combinations via actual apply button",
+      "accentless search",
+      "favorites",
+      "storage persistence across new fixture instance",
+      "light/dark",
+      "effects toggle",
+      "return to shared",
+      "mobile gallery",
+      "category and note controls on fixture",
+      "exam hides store",
+      "mocked Supabase sync and account separation"
+    ]
+  }
+}
