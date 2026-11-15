@@ -1,0 +1,1122 @@
+[
+  {
+    "theme": "classic",
+    "mode": "light",
+    "colors": {
+      "bg": "F4F4F5",
+      "paper": "FFFFFF",
+      "ink": "25262E",
+      "muted": "54545E",
+      "accent": "854B28",
+      "on": "FFFFFF",
+      "soft": "F6F2EF",
+      "soft2": "EEE6E1",
+      "line": "D1CED0",
+      "head": "FFFFFF",
+      "header-ink": "25262E"
+    },
+    "contrast": {
+      "ink/paper": 15.05,
+      "ink/bg": 13.69,
+      "muted/paper": 7.48,
+      "muted/soft": 6.72,
+      "ink/soft2": 12.21,
+      "accent/paper": 6.92,
+      "accent/soft2": 5.62,
+      "on/accent": 6.92,
+      "header-ink/head": 15.05
+    }
+  },
+  {
+    "theme": "classic",
+    "mode": "dark",
+    "colors": {
+      "bg": "181B21",
+      "paper": "252A32",
+      "ink": "F1F4F8",
+      "muted": "BCBFC5",
+      "accent": "F1BD82",
+      "on": "141C27",
+      "soft": "353940",
+      "soft2": "48494C",
+      "line": "5F6267",
+      "head": "21262D",
+      "header-ink": "F1F4F8"
+    },
+    "contrast": {
+      "ink/paper": 13.07,
+      "ink/bg": 15.63,
+      "muted/paper": 7.83,
+      "muted/soft": 6.29,
+      "ink/soft2": 8.16,
+      "accent/paper": 8.48,
+      "accent/soft2": 5.29,
+      "on/accent": 10.07,
+      "header-ink/head": 13.8
+    }
+  },
+  {
+    "theme": "christmas",
+    "mode": "light",
+    "colors": {
+      "bg": "F1F5F6",
+      "paper": "FFFFFF",
+      "ink": "192B32",
+      "muted": "455962",
+      "accent": "246B49",
+      "on": "FFFFFF",
+      "soft": "EFF4F1",
+      "soft2": "E0EAE6",
+      "line": "C4D2D4",
+      "head": "FFFFFF",
+      "header-ink": "192B32"
+    },
+    "contrast": {
+      "ink/paper": 14.66,
+      "ink/bg": 13.35,
+      "muted/paper": 7.35,
+      "muted/soft": 6.61,
+      "ink/soft2": 11.92,
+      "accent/paper": 6.41,
+      "accent/soft2": 5.22,
+      "on/accent": 6.41,
+      "header-ink/head": 14.66
+    }
+  },
+  {
+    "theme": "christmas",
+    "mode": "dark",
+    "colors": {
+      "bg": "141C22",
+      "paper": "202B35",
+      "ink": "F1F4F8",
+      "muted": "B0C3CB",
+      "accent": "8DDFB3",
+      "on": "141C27",
+      "soft": "2C3C44",
+      "soft2": "394E53",
+      "line": "51676E",
+      "head": "1C2830",
+      "header-ink": "F1F4F8"
+    },
+    "contrast": {
+      "ink/paper": 13.05,
+      "ink/bg": 15.62,
+      "muted/paper": 7.9,
+      "muted/soft": 6.27,
+      "ink/soft2": 7.97,
+      "accent/paper": 9.15,
+      "accent/soft2": 5.58,
+      "on/accent": 10.89,
+      "header-ink/head": 13.64
+    }
+  },
+  {
+    "theme": "tet",
+    "mode": "light",
+    "colors": {
+      "bg": "F5F3F5",
+      "paper": "FFFFFF",
+      "ink": "2A232F",
+      "muted": "59505F",
+      "accent": "A92D32",
+      "on": "FFFFFF",
+      "soft": "F9EFF0",
+      "soft2": "F3E2E2",
+      "line": "D5CAD1",
+      "head": "FFFFFF",
+      "header-ink": "2A232F"
+    },
+    "contrast": {
+      "ink/paper": 15.22,
+      "ink/bg": 13.78,
+      "muted/paper": 7.67,
+      "muted/soft": 6.81,
+      "ink/soft2": 12.17,
+      "accent/paper": 6.76,
+      "accent/soft2": 5.4,
+      "on/accent": 6.76,
+      "header-ink/head": 15.22
+    }
+  },
+  {
+    "theme": "tet",
+    "mode": "dark",
+    "colors": {
+      "bg": "181B20",
+      "paper": "252A32",
+      "ink": "F1F4F8",
+      "muted": "BEBFC4",
+      "accent": "FFC27D",
+      "on": "141C27",
+      "soft": "363A3F",
+      "soft2": "4A494B",
+      "line": "616367",
+      "head": "22262D",
+      "header-ink": "F1F4F8"
+    },
+    "contrast": {
+      "ink/paper": 13.07,
+      "ink/bg": 15.65,
+      "muted/paper": 7.86,
+      "muted/soft": 6.24,
+      "ink/soft2": 8.11,
+      "accent/paper": 9.11,
+      "accent/soft2": 5.65,
+      "on/accent": 10.83,
+      "header-ink/head": 13.76
+    }
+  },
+  {
+    "theme": "midautumn",
+    "mode": "light",
+    "colors": {
+      "bg": "F4F4F4",
+      "paper": "FFFFFF",
+      "ink": "27282D",
+      "muted": "55565D",
+      "accent": "8F5522",
+      "on": "FFFFFF",
+      "soft": "F7F2EE",
+      "soft2": "EFE7E0",
+      "line": "D2CFCF",
+      "head": "FFFFFF",
+      "header-ink": "27282D"
+    },
+    "contrast": {
+      "ink/paper": 14.71,
+      "ink/bg": 13.37,
+      "muted/paper": 7.3,
+      "muted/soft": 6.57,
+      "ink/soft2": 12.03,
+      "accent/paper": 6.02,
+      "accent/soft2": 4.92,
+      "on/accent": 6.02,
+      "header-ink/head": 14.71
+    }
+  },
+  {
+    "theme": "midautumn",
+    "mode": "dark",
+    "colors": {
+      "bg": "181C21",
+      "paper": "252B33",
+      "ink": "F1F4F8",
+      "muted": "BEC1C6",
+      "accent": "FFD18A",
+      "on": "141C27",
+      "soft": "363B40",
+      "soft2": "4A4C4D",
+      "line": "616568",
+      "head": "22272E",
+      "header-ink": "F1F4F8"
+    },
+    "contrast": {
+      "ink/paper": 12.93,
+      "ink/bg": 15.52,
+      "muted/paper": 7.9,
+      "muted/soft": 6.27,
+      "ink/soft2": 7.83,
+      "accent/paper": 10.01,
+      "accent/soft2": 6.06,
+      "on/accent": 12.03,
+      "header-ink/head": 13.62
+    }
+  },
+  {
+    "theme": "halloween",
+    "mode": "light",
+    "colors": {
+      "bg": "F5F4F4",
+      "paper": "FFFFFF",
+      "ink": "29262C",
+      "muted": "58545B",
+      "accent": "A44618",
+      "on": "FFFFFF",
+      "soft": "F8F1EE",
+      "soft2": "F2E5DF",
+      "line": "D5CDCE",
+      "head": "FFFFFF",
+      "header-ink": "29262C"
+    },
+    "contrast": {
+      "ink/paper": 14.92,
+      "ink/bg": 13.59,
+      "muted/paper": 7.41,
+      "muted/soft": 6.64,
+      "ink/soft2": 12.11,
+      "accent/paper": 6.06,
+      "accent/soft2": 4.92,
+      "on/accent": 6.06,
+      "header-ink/head": 14.92
+    }
+  },
+  {
+    "theme": "halloween",
+    "mode": "dark",
+    "colors": {
+      "bg": "181A20",
+      "paper": "252931",
+      "ink": "F1F4F8",
+      "muted": "BEBDC2",
+      "accent": "FFB169",
+      "on": "141C27",
+      "soft": "36383D",
+      "soft2": "4A4748",
+      "line": "616064",
+      "head": "22252C",
+      "header-ink": "F1F4F8"
+    },
+    "contrast": {
+      "ink/paper": 13.22,
+      "ink/bg": 15.77,
+      "muted/paper": 7.81,
+      "muted/soft": 6.28,
+      "ink/soft2": 8.33,
+      "accent/paper": 8.16,
+      "accent/soft2": 5.14,
+      "on/accent": 9.59,
+      "header-ink/head": 13.9
+    }
+  },
+  {
+    "theme": "night",
+    "mode": "light",
+    "colors": {
+      "bg": "F1F4F9",
+      "paper": "FFFFFF",
+      "ink": "1C273D",
+      "muted": "49556E",
+      "accent": "3E5099",
+      "on": "FFFFFF",
+      "soft": "F1F2F7",
+      "soft2": "E4E6F1",
+      "line": "C7CEDF",
+      "head": "FFFFFF",
+      "header-ink": "1C273D"
+    },
+    "contrast": {
+      "ink/paper": 14.93,
+      "ink/bg": 13.54,
+      "muted/paper": 7.48,
+      "muted/soft": 6.69,
+      "ink/soft2": 12.0,
+      "accent/paper": 7.47,
+      "accent/soft2": 6.01,
+      "on/accent": 7.47,
+      "header-ink/head": 14.93
+    }
+  },
+  {
+    "theme": "night",
+    "mode": "dark",
+    "colors": {
+      "bg": "151B25",
+      "paper": "212A38",
+      "ink": "F1F4F8",
+      "muted": "B4BFD4",
+      "accent": "A9BDFF",
+      "on": "141C27",
+      "soft": "2E394B",
+      "soft2": "3D495E",
+      "line": "556279",
+      "head": "1D2634",
+      "header-ink": "F1F4F8"
+    },
+    "contrast": {
+      "ink/paper": 13.1,
+      "ink/bg": 15.66,
+      "muted/paper": 7.81,
+      "muted/soft": 6.29,
+      "ink/soft2": 8.23,
+      "accent/paper": 7.85,
+      "accent/soft2": 4.93,
+      "on/accent": 9.31,
+      "header-ink/head": 13.8
+    }
+  },
+  {
+    "theme": "sakura",
+    "mode": "light",
+    "colors": {
+      "bg": "F5F3F7",
+      "paper": "FFFFFF",
+      "ink": "292436",
+      "muted": "585167",
+      "accent": "A23766",
+      "on": "FFFFFF",
+      "soft": "F8F0F4",
+      "soft2": "F2E3EA",
+      "line": "D4CBD8",
+      "head": "FFFFFF",
+      "header-ink": "292436"
+    },
+    "contrast": {
+      "ink/paper": 15.0,
+      "ink/bg": 13.61,
+      "muted/paper": 7.53,
+      "muted/soft": 6.73,
+      "ink/soft2": 12.11,
+      "accent/paper": 6.41,
+      "accent/soft2": 5.18,
+      "on/accent": 6.41,
+      "header-ink/head": 15.0
+    }
+  },
+  {
+    "theme": "sakura",
+    "mode": "dark",
+    "colors": {
+      "bg": "181A23",
+      "paper": "252936",
+      "ink": "F1F4F8",
+      "muted": "BEBCCE",
+      "accent": "FFA9CB",
+      "on": "141C27",
+      "soft": "363746",
+      "soft2": "4A4657",
+      "line": "615F72",
+      "head": "222531",
+      "header-ink": "F1F4F8"
+    },
+    "contrast": {
+      "ink/paper": 13.14,
+      "ink/bg": 15.72,
+      "muted/paper": 7.78,
+      "muted/soft": 6.29,
+      "ink/soft2": 8.26,
+      "accent/paper": 8.14,
+      "accent/soft2": 5.12,
+      "on/accent": 9.62,
+      "header-ink/head": 13.82
+    }
+  },
+  {
+    "theme": "rain",
+    "mode": "light",
+    "colors": {
+      "bg": "F0F5F7",
+      "paper": "FFFFFF",
+      "ink": "182A39",
+      "muted": "45586A",
+      "accent": "21647B",
+      "on": "FFFFFF",
+      "soft": "EEF3F5",
+      "soft2": "E0E9ED",
+      "line": "C4D1DB",
+      "head": "FFFFFF",
+      "header-ink": "182A39"
+    },
+    "contrast": {
+      "ink/paper": 14.69,
+      "ink/bg": 13.37,
+      "muted/paper": 7.35,
+      "muted/soft": 6.57,
+      "ink/soft2": 11.93,
+      "accent/paper": 6.62,
+      "accent/soft2": 5.37,
+      "on/accent": 6.62,
+      "header-ink/head": 14.69
+    }
+  },
+  {
+    "theme": "rain",
+    "mode": "dark",
+    "colors": {
+      "bg": "151C24",
+      "paper": "212B38",
+      "ink": "F1F4F8",
+      "muted": "B2C2D2",
+      "accent": "9DD8EC",
+      "on": "141C27",
+      "soft": "2D3B49",
+      "soft2": "3B4D5C",
+      "line": "536676",
+      "head": "1D2733",
+      "header-ink": "F1F4F8"
+    },
+    "contrast": {
+      "ink/paper": 12.97,
+      "ink/bg": 15.56,
+      "muted/paper": 7.86,
+      "muted/soft": 6.29,
+      "ink/soft2": 7.92,
+      "accent/paper": 9.18,
+      "accent/soft2": 5.61,
+      "on/accent": 10.99,
+      "header-ink/head": 13.69
+    }
+  },
+  {
+    "theme": "forest",
+    "mode": "light",
+    "colors": {
+      "bg": "F1F5F6",
+      "paper": "FFFFFF",
+      "ink": "1B2A32",
+      "muted": "475962",
+      "accent": "326844",
+      "on": "FFFFFF",
+      "soft": "F0F4F1",
+      "soft2": "E2EAE5",
+      "line": "C6D1D4",
+      "head": "FFFFFF",
+      "header-ink": "1B2A32"
+    },
+    "contrast": {
+      "ink/paper": 14.75,
+      "ink/bg": 13.44,
+      "muted/paper": 7.31,
+      "muted/soft": 6.58,
+      "ink/soft2": 12.03,
+      "accent/paper": 6.56,
+      "accent/soft2": 5.36,
+      "on/accent": 6.56,
+      "header-ink/head": 14.75
+    }
+  },
+  {
+    "theme": "forest",
+    "mode": "dark",
+    "colors": {
+      "bg": "151C22",
+      "paper": "212B34",
+      "ink": "F1F4F8",
+      "muted": "B4C3C9",
+      "accent": "A9DDA6",
+      "on": "141C27",
+      "soft": "2E3C43",
+      "soft2": "3D4D51",
+      "line": "55666C",
+      "head": "1D282F",
+      "header-ink": "F1F4F8"
+    },
+    "contrast": {
+      "ink/paper": 13.04,
+      "ink/bg": 15.59,
+      "muted/paper": 7.94,
+      "muted/soft": 6.29,
+      "ink/soft2": 8.0,
+      "accent/paper": 9.3,
+      "accent/soft2": 5.71,
+      "on/accent": 11.08,
+      "header-ink/head": 13.63
+    }
+  },
+  {
+    "theme": "autumn",
+    "mode": "light",
+    "colors": {
+      "bg": "F5F4F4",
+      "paper": "FFFFFF",
+      "ink": "28262D",
+      "muted": "57535C",
+      "accent": "98451F",
+      "on": "FFFFFF",
+      "soft": "F7F1EE",
+      "soft2": "F1E5E0",
+      "line": "D3CDCF",
+      "head": "FFFFFF",
+      "header-ink": "28262D"
+    },
+    "contrast": {
+      "ink/paper": 14.94,
+      "ink/bg": 13.61,
+      "muted/paper": 7.51,
+      "muted/soft": 6.71,
+      "ink/soft2": 12.11,
+      "accent/paper": 6.55,
+      "accent/soft2": 5.31,
+      "on/accent": 6.55,
+      "header-ink/head": 14.94
+    }
+  },
+  {
+    "theme": "autumn",
+    "mode": "dark",
+    "colors": {
+      "bg": "181B21",
+      "paper": "252A33",
+      "ink": "F1F4F8",
+      "muted": "BEBFC8",
+      "accent": "FFC099",
+      "on": "141C27",
+      "soft": "363942",
+      "soft2": "4A494F",
+      "line": "61626B",
+      "head": "22262F",
+      "header-ink": "F1F4F8"
+    },
+    "contrast": {
+      "ink/paper": 13.06,
+      "ink/bg": 15.63,
+      "muted/paper": 7.87,
+      "muted/soft": 6.3,
+      "ink/soft2": 8.08,
+      "accent/paper": 9.09,
+      "accent/soft2": 5.62,
+      "on/accent": 10.82,
+      "header-ink/head": 13.73
+    }
+  },
+  {
+    "theme": "ocean",
+    "mode": "light",
+    "colors": {
+      "bg": "F0F5F7",
+      "paper": "FFFFFF",
+      "ink": "152A39",
+      "muted": "41596A",
+      "accent": "086879",
+      "on": "FFFFFF",
+      "soft": "ECF4F5",
+      "soft2": "DCEAEC",
+      "line": "C0D1DA",
+      "head": "FFFFFF",
+      "header-ink": "152A39"
+    },
+    "contrast": {
+      "ink/paper": 14.77,
+      "ink/bg": 13.44,
+      "muted/paper": 7.34,
+      "muted/soft": 6.58,
+      "ink/soft2": 11.97,
+      "accent/paper": 6.43,
+      "accent/soft2": 5.21,
+      "on/accent": 6.43,
+      "header-ink/head": 14.77
+    }
+  },
+  {
+    "theme": "ocean",
+    "mode": "dark",
+    "colors": {
+      "bg": "141C24",
+      "paper": "1F2B37",
+      "ink": "F1F4F8",
+      "muted": "AEC3D1",
+      "accent": "78DDE4",
+      "on": "141C27",
+      "soft": "2A3C48",
+      "soft2": "364D5A",
+      "line": "4E6675",
+      "head": "1B2832",
+      "header-ink": "F1F4F8"
+    },
+    "contrast": {
+      "ink/paper": 13.05,
+      "ink/bg": 15.59,
+      "muted/paper": 7.9,
+      "muted/soft": 6.27,
+      "ink/soft2": 8.05,
+      "accent/paper": 9.09,
+      "accent/soft2": 5.6,
+      "on/accent": 10.82,
+      "header-ink/head": 13.63
+    }
+  },
+  {
+    "theme": "sunset",
+    "mode": "light",
+    "colors": {
+      "bg": "F5F3F6",
+      "paper": "FFFFFF",
+      "ink": "282534",
+      "muted": "575265",
+      "accent": "9A3D57",
+      "on": "FFFFFF",
+      "soft": "F7F0F2",
+      "soft2": "F1E4E7",
+      "line": "D3CCD6",
+      "head": "FFFFFF",
+      "header-ink": "282534"
+    },
+    "contrast": {
+      "ink/paper": 14.95,
+      "ink/bg": 13.55,
+      "muted/paper": 7.5,
+      "muted/soft": 6.68,
+      "ink/soft2": 12.1,
+      "accent/paper": 6.61,
+      "accent/soft2": 5.34,
+      "on/accent": 6.61,
+      "header-ink/head": 14.95
+    }
+  },
+  {
+    "theme": "sunset",
+    "mode": "dark",
+    "colors": {
+      "bg": "181B22",
+      "paper": "252934",
+      "ink": "F1F4F8",
+      "muted": "BEBECA",
+      "accent": "FFB5AD",
+      "on": "141C27",
+      "soft": "363843",
+      "soft2": "4A4752",
+      "line": "61616D",
+      "head": "222630",
+      "header-ink": "F1F4F8"
+    },
+    "contrast": {
+      "ink/paper": 13.17,
+      "ink/bg": 15.62,
+      "muted/paper": 7.89,
+      "muted/soft": 6.33,
+      "ink/soft2": 8.23,
+      "accent/paper": 8.62,
+      "accent/soft2": 5.39,
+      "on/accent": 10.17,
+      "header-ink/head": 13.72
+    }
+  },
+  {
+    "theme": "cyber",
+    "mode": "light",
+    "colors": {
+      "bg": "F3F3F9",
+      "paper": "FFFFFF",
+      "ink": "21253E",
+      "muted": "4F5370",
+      "accent": "6740A4",
+      "on": "FFFFFF",
+      "soft": "F4F1F8",
+      "soft2": "EAE4F2",
+      "line": "CDCCE0",
+      "head": "FFFFFF",
+      "header-ink": "21253E"
+    },
+    "contrast": {
+      "ink/paper": 15.01,
+      "ink/bg": 13.58,
+      "muted/paper": 7.49,
+      "muted/soft": 6.7,
+      "ink/soft2": 12.07,
+      "accent/paper": 7.38,
+      "accent/soft2": 5.93,
+      "on/accent": 7.38,
+      "header-ink/head": 15.01
+    }
+  },
+  {
+    "theme": "cyber",
+    "mode": "dark",
+    "colors": {
+      "bg": "161B25",
+      "paper": "232938",
+      "ink": "F1F4F8",
+      "muted": "B7BED4",
+      "accent": "C9B4FF",
+      "on": "141C27",
+      "soft": "31384B",
+      "soft2": "42475E",
+      "line": "596179",
+      "head": "1F2634",
+      "header-ink": "F1F4F8"
+    },
+    "contrast": {
+      "ink/paper": 13.17,
+      "ink/bg": 15.63,
+      "muted/paper": 7.84,
+      "muted/soft": 6.3,
+      "ink/soft2": 8.3,
+      "accent/paper": 7.92,
+      "accent/soft2": 4.99,
+      "on/accent": 9.35,
+      "header-ink/head": 13.74
+    }
+  },
+  {
+    "theme": "cultivation",
+    "mode": "light",
+    "colors": {
+      "bg": "F1F5F6",
+      "paper": "FFFFFF",
+      "ink": "192B35",
+      "muted": "465965",
+      "accent": "276C5C",
+      "on": "FFFFFF",
+      "soft": "EFF4F3",
+      "soft2": "E1EAE8",
+      "line": "C4D2D7",
+      "head": "FFFFFF",
+      "header-ink": "192B35"
+    },
+    "contrast": {
+      "ink/paper": 14.6,
+      "ink/bg": 13.3,
+      "muted/paper": 7.3,
+      "muted/soft": 6.57,
+      "ink/soft2": 11.91,
+      "accent/paper": 6.2,
+      "accent/soft2": 5.06,
+      "on/accent": 6.2,
+      "header-ink/head": 14.6
+    }
+  },
+  {
+    "theme": "cultivation",
+    "mode": "dark",
+    "colors": {
+      "bg": "151C23",
+      "paper": "212C36",
+      "ink": "F1F4F8",
+      "muted": "B2C3CD",
+      "accent": "A0E0C7",
+      "on": "141C27",
+      "soft": "2D3C46",
+      "soft2": "3C4E56",
+      "line": "536771",
+      "head": "1D2831",
+      "header-ink": "F1F4F8"
+    },
+    "contrast": {
+      "ink/paper": 12.88,
+      "ink/bg": 15.57,
+      "muted/paper": 7.83,
+      "muted/soft": 6.27,
+      "ink/soft2": 7.88,
+      "accent/paper": 9.46,
+      "accent/soft2": 5.79,
+      "on/accent": 11.41,
+      "header-ink/head": 13.6
+    }
+  },
+  {
+    "theme": "magic",
+    "mode": "light",
+    "colors": {
+      "bg": "F3F4F8",
+      "paper": "FFFFFF",
+      "ink": "22253C",
+      "muted": "50536E",
+      "accent": "694296",
+      "on": "FFFFFF",
+      "soft": "F4F1F7",
+      "soft2": "EAE5F0",
+      "line": "CDCCDE",
+      "head": "FFFFFF",
+      "header-ink": "22253C"
+    },
+    "contrast": {
+      "ink/paper": 15.02,
+      "ink/bg": 13.67,
+      "muted/paper": 7.49,
+      "muted/soft": 6.7,
+      "ink/soft2": 12.14,
+      "accent/paper": 7.45,
+      "accent/soft2": 6.02,
+      "on/accent": 7.45,
+      "header-ink/head": 15.02
+    }
+  },
+  {
+    "theme": "magic",
+    "mode": "dark",
+    "colors": {
+      "bg": "171B25",
+      "paper": "232A38",
+      "ink": "F1F4F8",
+      "muted": "B9BED4",
+      "accent": "D6B9FF",
+      "on": "141C27",
+      "soft": "32394B",
+      "soft2": "44485E",
+      "line": "5B6179",
+      "head": "202634",
+      "header-ink": "F1F4F8"
+    },
+    "contrast": {
+      "ink/paper": 13.04,
+      "ink/bg": 15.6,
+      "muted/paper": 7.8,
+      "muted/soft": 6.24,
+      "ink/soft2": 8.15,
+      "accent/paper": 8.39,
+      "accent/soft2": 5.24,
+      "on/accent": 9.99,
+      "header-ink/head": 13.71
+    }
+  },
+  {
+    "theme": "cute",
+    "mode": "light",
+    "colors": {
+      "bg": "F5F4F7",
+      "paper": "FFFFFF",
+      "ink": "282639",
+      "muted": "57546A",
+      "accent": "9C4879",
+      "on": "FFFFFF",
+      "soft": "F8F1F5",
+      "soft2": "F1E5EC",
+      "line": "D4CDDA",
+      "head": "FFFFFF",
+      "header-ink": "282639"
+    },
+    "contrast": {
+      "ink/paper": 14.72,
+      "ink/bg": 13.44,
+      "muted/paper": 7.29,
+      "muted/soft": 6.56,
+      "ink/soft2": 12.03,
+      "accent/paper": 5.81,
+      "accent/soft2": 4.74,
+      "on/accent": 5.81,
+      "header-ink/head": 14.72
+    }
+  },
+  {
+    "theme": "cute",
+    "mode": "dark",
+    "colors": {
+      "bg": "181B24",
+      "paper": "252A37",
+      "ink": "F1F4F8",
+      "muted": "BEBED0",
+      "accent": "FFB8E0",
+      "on": "141C27",
+      "soft": "363948",
+      "soft2": "4A485A",
+      "line": "616174",
+      "head": "222632",
+      "header-ink": "F1F4F8"
+    },
+    "contrast": {
+      "ink/paper": 12.99,
+      "ink/bg": 15.59,
+      "muted/paper": 7.83,
+      "muted/soft": 6.25,
+      "ink/soft2": 8.05,
+      "accent/paper": 9.0,
+      "accent/soft2": 5.57,
+      "on/accent": 10.76,
+      "header-ink/head": 13.68
+    }
+  },
+  {
+    "theme": "winter",
+    "mode": "light",
+    "colors": {
+      "bg": "F1F5F8",
+      "paper": "FFFFFF",
+      "ink": "1A293C",
+      "muted": "47576E",
+      "accent": "315E94",
+      "on": "FFFFFF",
+      "soft": "F0F3F7",
+      "soft2": "E2E8F0",
+      "line": "C6D0DE",
+      "head": "FFFFFF",
+      "header-ink": "1A293C"
+    },
+    "contrast": {
+      "ink/paper": 14.72,
+      "ink/bg": 13.43,
+      "muted/paper": 7.35,
+      "muted/soft": 6.61,
+      "ink/soft2": 11.94,
+      "accent/paper": 6.65,
+      "accent/soft2": 5.39,
+      "on/accent": 6.65,
+      "header-ink/head": 14.72
+    }
+  },
+  {
+    "theme": "winter",
+    "mode": "dark",
+    "colors": {
+      "bg": "151C25",
+      "paper": "212B38",
+      "ink": "F1F4F8",
+      "muted": "B4C2D4",
+      "accent": "ADD6FF",
+      "on": "141C27",
+      "soft": "2F3B4B",
+      "soft2": "3E4C5E",
+      "line": "556579",
+      "head": "1E2734",
+      "header-ink": "F1F4F8"
+    },
+    "contrast": {
+      "ink/paper": 12.97,
+      "ink/bg": 15.54,
+      "muted/paper": 7.91,
+      "muted/soft": 6.28,
+      "ink/soft2": 7.93,
+      "accent/paper": 9.43,
+      "accent/soft2": 5.77,
+      "on/accent": 11.3,
+      "header-ink/head": 13.65
+    }
+  },
+  {
+    "theme": "desert",
+    "mode": "light",
+    "colors": {
+      "bg": "F4F4F5",
+      "paper": "FFFFFF",
+      "ink": "26282E",
+      "muted": "55565E",
+      "accent": "8C5729",
+      "on": "FFFFFF",
+      "soft": "F6F2EF",
+      "soft2": "EFE7E1",
+      "line": "D2CFD0",
+      "head": "FFFFFF",
+      "header-ink": "26282E"
+    },
+    "contrast": {
+      "ink/paper": 14.73,
+      "ink/bg": 13.4,
+      "muted/paper": 7.29,
+      "muted/soft": 6.55,
+      "ink/soft2": 12.06,
+      "accent/paper": 5.98,
+      "accent/soft2": 4.9,
+      "on/accent": 5.98,
+      "header-ink/head": 14.73
+    }
+  },
+  {
+    "theme": "desert",
+    "mode": "dark",
+    "colors": {
+      "bg": "181B21",
+      "paper": "252A33",
+      "ink": "F1F4F8",
+      "muted": "BCBFC6",
+      "accent": "F2C38D",
+      "on": "141C27",
+      "soft": "353A41",
+      "soft2": "48494D",
+      "line": "5F6369",
+      "head": "21262E",
+      "header-ink": "F1F4F8"
+    },
+    "contrast": {
+      "ink/paper": 13.06,
+      "ink/bg": 15.63,
+      "muted/paper": 7.82,
+      "muted/soft": 6.22,
+      "ink/soft2": 8.15,
+      "accent/paper": 8.9,
+      "accent/soft2": 5.55,
+      "on/accent": 10.58,
+      "header-ink/head": 13.78
+    }
+  },
+  {
+    "theme": "blackgold",
+    "mode": "light",
+    "colors": {
+      "bg": "F3F4F4",
+      "paper": "FFFFFF",
+      "ink": "23282C",
+      "muted": "51565C",
+      "accent": "76541B",
+      "on": "FFFFFF",
+      "soft": "F5F2EE",
+      "soft2": "ECE7DF",
+      "line": "CFCFCE",
+      "head": "FFFFFF",
+      "header-ink": "23282C"
+    },
+    "contrast": {
+      "ink/paper": 14.88,
+      "ink/bg": 13.5,
+      "muted/paper": 7.41,
+      "muted/soft": 6.64,
+      "ink/soft2": 12.09,
+      "accent/paper": 6.88,
+      "accent/soft2": 5.59,
+      "on/accent": 6.88,
+      "header-ink/head": 14.88
+    }
+  },
+  {
+    "theme": "blackgold",
+    "mode": "dark",
+    "colors": {
+      "bg": "181C20",
+      "paper": "252B32",
+      "ink": "F1F4F8",
+      "muted": "BDC1C5",
+      "accent": "F4D080",
+      "on": "141C27",
+      "soft": "353B3F",
+      "soft2": "484B4B",
+      "line": "5F6467",
+      "head": "21272D",
+      "header-ink": "F1F4F8"
+    },
+    "contrast": {
+      "ink/paper": 12.95,
+      "ink/bg": 15.53,
+      "muted/paper": 7.89,
+      "muted/soft": 6.27,
+      "ink/soft2": 7.99,
+      "accent/paper": 9.64,
+      "accent/soft2": 5.95,
+      "on/accent": 11.57,
+      "header-ink/head": 13.67
+    }
+  },
+  {
+    "theme": "space",
+    "mode": "light",
+    "colors": {
+      "bg": "F2F4F9",
+      "paper": "FFFFFF",
+      "ink": "1D263D",
+      "muted": "4A546F",
+      "accent": "444A9E",
+      "on": "FFFFFF",
+      "soft": "F1F1F8",
+      "soft2": "E5E6F1",
+      "line": "C8CDDF",
+      "head": "FFFFFF",
+      "header-ink": "1D263D"
+    },
+    "contrast": {
+      "ink/paper": 15.03,
+      "ink/bg": 13.66,
+      "muted/paper": 7.53,
+      "muted/soft": 6.7,
+      "ink/soft2": 12.11,
+      "accent/paper": 7.72,
+      "accent/soft2": 6.22,
+      "on/accent": 7.72,
+      "header-ink/head": 15.03
+    }
+  },
+  {
+    "theme": "space",
+    "mode": "dark",
+    "colors": {
+      "bg": "161B25",
+      "paper": "222A38",
+      "ink": "F1F4F8",
+      "muted": "B6BFD4",
+      "accent": "BDBDFF",
+      "on": "141C27",
+      "soft": "30394B",
+      "soft2": "40495E",
+      "line": "586279",
+      "head": "1E2634",
+      "header-ink": "F1F4F8"
+    },
+    "contrast": {
+      "ink/paper": 13.07,
+      "ink/bg": 15.63,
+      "muted/paper": 7.82,
+      "muted/soft": 6.29,
+      "ink/soft2": 8.16,
+      "accent/paper": 8.16,
+      "accent/soft2": 5.1,
+      "on/accent": 9.7,
+      "header-ink/head": 13.77
+    }
+  }
+]

@@ -7,7 +7,7 @@
  const input=document.getElementById('announcementInput');
  const status=document.getElementById('announcementStatus');
  let loading=false;
- function show(value){if(text){text.textContent=value;text.style.setProperty('--announcement-duration',Math.max(25,value.length/4)+'s')}}
+ function show(value){if(text){const next=String(value??'').trim()||'Chào mừng bạn đến với ExamLab · Chúc bạn học tập hiệu quả!';if(text.textContent!==next)text.textContent=next;}}
  async function refresh(){
   if(!db||loading)return;
   loading=true;
